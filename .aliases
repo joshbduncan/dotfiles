@@ -1,0 +1,48 @@
+#   finderShowHidden:   Show hidden files in Finder
+#   finderHideHidden:   Hide hidden files in Finder
+#   -------------------------------------------------------------------
+    alias finderShowHidden='defaults write com.apple.finder ShowAllFiles TRUE'
+    alias finderHideHidden='defaults write com.apple.finder ShowAllFiles FALSE'
+
+# Edit/Reload zsh profile
+alias editprofile='vim ~/.zshrc'
+alias editaliases='vim ~/.aliases'
+alias reload='source ~/.zshrc'
+
+# Open Common Mac Programs
+alias text='open -a TextEdit'
+alias pre='open -a Preview'
+
+# Common Commands
+alias ls='ls -GFh'
+alias q='exit'
+alias c='clear'
+alias h='history'
+alias cls='clear;ls'
+alias gs='git status'
+alias diskspace='df -h /Volumes/Macintosh\ HD'
+alias myip='ifconfig | grep "inet "'
+
+# Virtualenv
+alias vmake='python3 -m virtualenv venv'
+alias vstart='source venv/bin/activate'
+alias vrestart='deactivate; source venv/bin/activate'
+alias vend='deactivate'
+
+# Common Directories
+alias home='cd ~'
+alias root='cd /'
+alias dtop='cd ~/Desktop'
+alias dbox='cd ~/Dropbox'
+alias dev='cd ~/dev'
+alias projects='cd ~/dev/projects'
+
+# Moving Around Directories
+# alias ..='cd ..'
+# alias ...='cd ..; cd ..'
+# alias ....='cd ..; cd ..; cd ..'
+
+# Setting PATH for Python 3.7
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
+export PATH
