@@ -1,0 +1,8 @@
+# Folder Crap
+.DS_Store
+._*
+Thumbs.db
+
+# Private Stuff
+.private
+.gitconfig
