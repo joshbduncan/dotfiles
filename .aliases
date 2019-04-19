@@ -1,17 +1,25 @@
-#   finderShowHidden:   Show hidden files in Finder
-#   finderHideHidden:   Hide hidden files in Finder
-#   -------------------------------------------------------------------
-    alias finderShowHidden='defaults write com.apple.finder ShowAllFiles TRUE'
-    alias finderHideHidden='defaults write com.apple.finder ShowAllFiles FALSE'
+# Show/Hide Finder Files
+alias show='defaults write com.apple.finder ShowAllFiles TRUE'
+alias hide='defaults write com.apple.finder ShowAllFiles FALSE'
 
 # Edit/Reload zsh profile
-alias editprofile='vim ~/.zshrc'
-alias editaliases='vim ~/.aliases'
+alias editprofile='vim ~/Dropbox/Dev/dotfiles/.zshrc'
+alias editaliases='vim ~/Dropbox/Dev/dotfiles/.aliases'
 alias reload='source ~/.zshrc'
 
 # Open Common Mac Programs
 alias text='open -a TextEdit'
 alias pre='open -a Preview'
+
+# List all files colorized in long format, including dot files
+colorflag="-G"
+alias la="ls -lahF ${colorflag}"
+
+# Always use color output for `ls`
+alias ls="command ls -GFh ${colorflag}"
+export LS_COLORS='no=00:fi=00:di=04;35:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
+
+export LSCOLORS='Gxfxcxdxbxegedabagacad'
 
 # Common Commands
 alias ls='ls -GFh'
@@ -32,8 +40,8 @@ alias vend='deactivate'
 # Common Directories
 alias home='cd ~'
 alias root='cd /'
-alias dtop='cd ~/Desktop'
-alias dbox='cd ~/Dropbox'
+alias desktop='cd ~/Desktop'
+alias dropbox='cd ~/Dropbox'
 alias dev='cd ~/dev'
 alias projects='cd ~/dev/projects'
 
@@ -41,8 +49,3 @@ alias projects='cd ~/dev/projects'
 # alias ..='cd ..'
 # alias ...='cd ..; cd ..'
 # alias ....='cd ..; cd ..; cd ..'
-
-# Setting PATH for Python 3.7
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
-export PATH
