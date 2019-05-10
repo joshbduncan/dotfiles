@@ -31,11 +31,21 @@ alias gs='git status'
 alias diskspace='df -h /Volumes/Macintosh\ HD'
 alias myip='ifconfig | grep "inet "'
 
-# Virtualenv
-alias vmake='python3 -m virtualenv venv'
+# Python Virtual Environments
+alias vmake='python3 -m venv venv'
 alias vstart='source venv/bin/activate'
 alias vrestart='deactivate; source venv/bin/activate'
 alias vend='deactivate'
+
+# Virtualenv ** OLD **
+# alias vmake='python3 -m virtualenv venv'
+# alias vstart='source venv/bin/activate'
+# alias vrestart='deactivate; source venv/bin/activate'
+# alias vend='deactivate'
+
+# iPython and Jupyter Paths
+alias ipython='/Library/Frameworks/Python.framework/Versions/3.7/bin/ipython'
+alias jupyter='/Library/Frameworks/Python.framework/Versions/3.7/bin/jupyter'
 
 # Common Directories
 alias home='cd ~'
