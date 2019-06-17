@@ -31,6 +31,8 @@ alias gs='git status'
 alias diskspace='df -h /Volumes/Macintosh\ HD'
 alias myip='ifconfig | grep "inet "'
 
+alias filecount='find . -type f | wc -l'
+
 # Python Virtual Environments
 alias vmake='python3 -m venv venv'
 alias vstart='source venv/bin/activate'
