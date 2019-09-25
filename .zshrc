@@ -68,11 +68,15 @@ plugins=(
 	pip
 	virtualenv
 	zsh-autosuggestions
+        vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+# Setup VI mode
+export KEYTIMEOUT=1
 
 # zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
