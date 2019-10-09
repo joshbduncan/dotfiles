@@ -1,3 +1,4 @@
+  
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -26,14 +27,8 @@ ZSH_THEME="robbyrussell"
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
-
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -69,20 +64,27 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git
-    python
-    pip
-    virtualenv
+	git
+	python
+	pip
+	virtualenv
+    vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# zsh-completions https://formulae.brew.sh/formula/zsh-completions
+# Setup VI mode
+export KEYTIMEOUT=1
+
+# zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-#syntax highlighting https://formulae.brew.sh/formula/zsh-syntax-highlighting#default
+#zsh-autosuggestions
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+#syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -108,6 +110,6 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-RPROMPT=' $(virtualenv_prompt_info)'
 source ~/.aliases
+
+export VIRTUAL_ENV_DISABLE_PROMPT=
