@@ -15,6 +15,7 @@ alias reload='source ~/.zshrc'
 alias text='open -a TextEdit'
 alias pre='open -a Preview'
 alias tictactoe='python3 ~/Dropbox/Dev/projects/games/tic-tac-toe/tic-tac-toe.py'
+alias expenses='python3 ~/Dropbox/Dev/projects/Expenses2PDF/expenses2pdf.py'
 
 # List all files colorized in long format, including dot files
 colorflag="-G"
@@ -28,6 +29,9 @@ export LSCOLORS='Gxfxcxdxbxegedabagacad'
 
 # Common Commands
 alias ls='ls -GFh'
+alias ll='exa -l'
+alias la='exa -la'
+alias cat='bat'
 alias q='exit'
 alias c='clear'
 alias h='history'
@@ -39,7 +43,6 @@ alias myip='ifconfig | grep "inet "'
 alias ip='curl icanhazip.com'
 
 alias filecount='find . -type f | wc -l'
-
 
 alias cpu='top -o cpu'
 alias mem='top -o rsize'
@@ -57,18 +60,14 @@ alias vend='deactivate'
 # alias vend='deactivate'
 
 # iPython and Jupyter Paths
-alias ipython='/Library/Frameworks/Python.framework/Versions/3.7/bin/ipython'
-alias jupyter='/Library/Frameworks/Python.framework/Versions/3.7/bin/jupyter'
+# alias ipython='/Library/Frameworks/Python.framework/Versions/3.7/bin/ipython'
+# alias jupyter='/Library/Frameworks/Python.framework/Versions/3.7/bin/jupyter'
 
 # Common Directories
-alias home='cd ~'
-alias root='cd /'
+# alias home='cd ~'
+# alias root='cd /'
 alias desktop='cd ~/Desktop'
 alias dropbox='cd ~/Dropbox'
 alias dev='cd ~/dev'
 alias projects='cd ~/dev/projects'
 
-# Moving Around Directories
-# alias ..='cd ..'
-# alias ...='cd ..; cd ..'
-# alias ....='cd ..; cd ..; cd ..'

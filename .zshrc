@@ -9,7 +9,7 @@ export ZSH="/Users/jbd/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="jdizzle"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -68,7 +68,9 @@ plugins=(
 	python
 	pip
 	virtualenv
-    vi-mode
+	colored-man-pages
+	osx
+	vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -113,3 +115,5 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.aliases
 
 export VIRTUAL_ENV_DISABLE_PROMPT=
+export PYTHONPATH="${PYTHONPATH}:/Users/jbd/Library/Python/3.7/bin/"
+export PATH="${PATH}:/Users/jbd/Library/Python/3.7/bin/"
