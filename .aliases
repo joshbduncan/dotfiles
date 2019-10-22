@@ -8,7 +8,9 @@ alias messydesk="defaults write com.apple.finder CreateDesktop true; killall Fin
 
 # Edit/Reload zsh profile
 alias editprofile='vim ~/Dropbox/Dev/dotfiles/.zshrc'
+alias codeprofile='code ~/Dropbox/Dev/dotfiles/.zshrc'
 alias editaliases='vim ~/Dropbox/Dev/dotfiles/.aliases'
+alias codealiases='code ~/Dropbox/Dev/dotfiles/.aliases'
 alias reload='source ~/.zshrc'
 
 # Open Common Mac Programs
