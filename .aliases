@@ -12,12 +12,15 @@ alias codeprofile='code ~/Dropbox/Dev/dotfiles/.zshrc'
 alias editaliases='vim ~/Dropbox/Dev/dotfiles/.aliases'
 alias codealiases='code ~/Dropbox/Dev/dotfiles/.aliases'
 alias reload='source ~/.zshrc'
+alias dotfiles='cd ~/Dropbox/Dev/dotfiles'
 
 # Open Common Mac Programs
 alias text='open -a TextEdit'
 alias pre='open -a Preview'
 alias tictactoe='python3 ~/Dropbox/Dev/projects/games/tic-tac-toe/tic-tac-toe.py'
 alias expenses='python3 ~/Dropbox/Dev/projects/Expenses2PDF/expenses2pdf.py'
+alias new_job='python3 ~/Dropbox/Dev/projects/DNKD/new_job.py'
+
 
 # List all files colorized in long format, including dot files
 colorflag="-G"
