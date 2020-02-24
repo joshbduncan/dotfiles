@@ -1,41 +1,94 @@
-" Josh Duncan .vimrc
-" Updated 2020-02-19
+Josh Duncan .vimrc
+Updated: 2020-02-23
 
-let python_highlight_all=1
+set paste
+set pastetoggle=<F2>
+set rnu
+set number
+set mouse=a
+set backspace=indent,eol,start
+set t_Co=256        	"set colors to 256
+syntax enable		"use syntax highlighting
+
+" Pathogen
+execute pathogen#infect()
 syntax on
-
-filetype off
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" Plugins
-Plugin 'dracula/vim', { 'name': 'dracula' }
-Plugin 'preservim/nerdtree'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'nvie/vim-flake8'
-Plugin 'kien/ctrlp.vim'
-Plugin 'vim-airline/vim-airline'
-
-call vundle#end()
 filetype plugin indent on
 
-set autoindent
-set number
-set relativenumber
-set ruler
-set splitbelow
-set splitright
-set encoding=utf-8
-set noesckeys
+let g:Powerline_symbols = "fancy"
+let g:Powerline_dividers_override = ["\Ue0b0","\Ue0b1","\Ue0b2","\Ue0b3"]
+let g:Powerline_symbols_override = {'BRANCH': "\Ue0a0", 'LINE': "\Ue0a1", 'RO': "\Ue0a2"}
+let g:airline_powerline_fonts = 1
+let g:airline_right_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_left_alt_sep= ''
+let g:airline_left_sep = ''
 
-set nocompatible
+" air-line
+let g:airline_powerline_fonts = 1
 
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+
+"Airline Themes
+"let g:airline_theme='kolor'
+let g:airline_theme='dracula'
+
+" Tab stops
+"	set tabstop=4    	" when you press tab, it will move forward 
+						" by 4 spaces
+" ----------------------------------------------------------------------
+	set shiftwidth=4 	" the number of spaces the >>, <<, >, and < 
+						" commands will move by will be 4
+" ----------------------------------------------------------------------
+	set smarttab 		" pressing backspace on a blank indented line 
+						" will delete the amount of spaces equal to 
+						" shiftwidth
+
+" Key mappings
+	" Set Leader to Space
+		let mapleader = "\<Space>"
+
+	" I hate the Escape key
+		imap <leader>q \<Esc>
+		inoremap jj \<Esc>
+
+	" tab stuff
+		nnoremap tn :tabnew<cr>
+		nnoremap tk :tabnext<cr>
+		nnoremap tj :tabprev<cr>
+		nnoremap th :tabfirst<cr>
+		nnoremap tl :tablast<cr>
+
+	" space-s to save
+		nnoremap <leader>s :w<cr>
+
+	" space-q to quit (doesn't save, watch out!)
+		nnoremap <leader>q :q!<cr>
 
 " BUFFER FUN
 
@@ -72,6 +125,24 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+
+" Commenting
+	
+	" space-3 insert "#" commenting
+		nnoremap <leader>3 :norm i#<cr>
+		vnoremap <leader>3 :norm i#<cr>
+
+" Convenience
+	nmap G Gzz
+	nmap n nzz
+	nmap N Nzz
+
+" Reload vimrc
+	nnoremap <leader>rv :source<Space>%<cr>
+
+" Edit vimrc
+	nnoremap <leader>ev :tabnew $MYVIMRC<cr>
+
 " PEP8 Python Indentation
 au BufNewFile,BufRead *.py
     \ set tabstop=4
@@ -81,3 +152,5 @@ au BufNewFile,BufRead *.py
     \ | set expandtab
     \ | set autoindent
     \ | set fileformat=unix
+
+" vim: set ft=vim :
