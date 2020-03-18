@@ -42,15 +42,15 @@ alias c='clear'
 alias h='history'
 alias cls='clear;ls'
 alias gs='git status'
-alias diskspace='df -h /Volumes/Macintosh\ HD'
 
+# Info Commands
+alias diskspace='df -h /Volumes/Macintosh\ HD'
+alias filecount='find . -type f | wc -l'
 alias myip='ifconfig | grep "inet "'
 alias ip='curl icanhazip.com'
-
-alias filecount='find . -type f | wc -l'
-
 alias cpu='top -o cpu'
 alias mem='top -o rsize'
+alias todo='for f in *.py; do echo "File $f TODO entries..."; cat $f | grep TODO; done'
 
 # Python Virtual Environments
 alias vmake='python3 -m venv venv'
