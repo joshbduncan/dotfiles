@@ -44,7 +44,7 @@ filetype plugin indent on    " required
 " Customization
 
 " Keymappings
-:let mapleader = ","
+    :let mapleader = ","
 
     " i hate escape key
        inoremap \\ <Esc>
@@ -55,46 +55,44 @@ filetype plugin indent on    " required
         nmap <leader>q :q!<cr>
 
     " tab stuff
-        nmap <leader>tn :tabnew<cr>
-        nmap <leader>tt :tabnext<cr>
+        "nmap <leader>tn :tabnew<cr>
+        "nmap <leader>tt :tabnext<cr>
         " nmap <leader>tk :tabnext<cr>
         " nmap <leader>tj :tabprev<cr>
         " nmap <leader>th :tabfirst<cr>
         " nmap <leader>tl :tablast<cr>
 
-" Buffer Fun
-    " Enable the list of buffers
-        let g:airline#extensions#tabline#enabled = 1
+    " Buffer Fun
+        " Enable the list of buffers
+            let g:airline#extensions#tabline#enabled = 1
 
-    " Show just the filename
-        let g:airline#extensions#tabline#fnamemod = ':t'
+        " Show just the filename
+            let g:airline#extensions#tabline#fnamemod = ':t'
 
-    " This allows buffers to be hidden if you've modified a buffer.
-    " This is almost a must if you wish to use buffers in this way.
-        set hidden
-        set splitbelow
-        set splitright
+        " This allows buffers to be hidden if you've modified a buffer.
+        " This is almost a must if you wish to use buffers in this way.
+            set hidden
+            set splitbelow
+            set splitright
 
-        nmap <leader>bn :enew<cr>
-        nmap <leader>vb :vnew<cr>
-        nmap <leader>bb :bnext<cr>
-        " nmap <leader>bk :bnext<cr>
-        " nmap <leader>bj :bprevious<cr>
-        " nmap <leader>bh :bfirst<cr>
-        " nmap <leader>bl :blast<cr>
+            nmap <leader>b :enew<cr>
+            nmap <leader>s :sbn<cr>
+            nmap <leader>v :vnew<cr>
+            nmap <leader>l :bnext<cr>
+            nmap <leader>h :bprevious<cr>
 
-    " Close the current buffer and move to the previous one
-    " This replicates the idea of closing a tab
-        nmap <leader>bq :bp <BAR> bd #<CR>
+        " Close the current buffer and move to the previous one
+        " This replicates the idea of closing a tab
+            nmap <leader>bq :bp <BAR> bd #<CR>
 
-    " Show all open buffers and their status
-        nmap <leader>bl :ls<CR>
+        " Show all open buffers and their status
+            nmap <leader>bl :ls<CR>
 
-" Setup split key combos
-    nnoremap <C-J> <C-W>j
-    nnoremap <C-K> <C-W>k
-    nnoremap <C-L> <C-W>l
-    nnoremap <C-H> <C-W>h
+        " Setup split key combos
+            nnoremap <C-J> <C-W>j
+            nnoremap <C-K> <C-W>k
+            nnoremap <C-L> <C-W>l
+            nnoremap <C-H> <C-W>h
 
 let g:Powerline_symbols = "fancy"
 let g:Powerline_dividers_override = ["\Ue0b0","\Ue0b1","\Ue0b2","\Ue0b3"]
@@ -219,7 +217,7 @@ au BufNewFile,BufRead *.py
     \ | set fileformat=unix
 
 " center after jump
-    nmap g gzz
+    nmap gg ggzz
     nmap G Gzz
     nmap n nzz
     nmap N Nzz
