@@ -19,7 +19,7 @@ alias text='open -a TextEdit'
 alias pre='open -a Preview'
 alias tictactoe='python3 ~/Dropbox/Dev/projects/games/tic-tac-toe/tic-tac-toe.py'
 alias expenses='python3 ~/Dropbox/Dev/projects/Expenses2PDF/expenses2pdf.py'
-alias new_job='python3 ~/Dropbox/Dev/projects/DNKD/asana/new_project.py'
+alias new_job='python3 ~/Dropbox/Dev/projects/DNKD/new-project/new_project.py'
 
 
 # List all files colorized in long format, including dot files
