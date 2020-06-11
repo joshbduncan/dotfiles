@@ -2,6 +2,9 @@
 export ZSH="/Users/jbd/.oh-my-zsh"
 ZSH_THEME="jdizzle"
 
+# Setup FZF
+export FZF_BASE=/usr/local/bin/fzf
+
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(
@@ -12,6 +15,7 @@ plugins=(
 	colored-man-pages
 	osx
 	vi-mode
+        fzf
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -24,10 +28,10 @@ export KEYTIMEOUT=1
 # zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-#zsh-autosuggestions
+# zsh-autosuggestions
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-#syntax highlighting
+# syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Set personal aliases

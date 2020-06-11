@@ -165,16 +165,20 @@ let g:ycm_semantic_triggers =  {'python' : ['re!\w{2}']}
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_always_populate_loc_list = 0
+" let g:syntastic_always_populate_loc_list = 0
+" let g:syntastic_auto_loc_list = 0
+" let g:syntastic_check_on_open = 0
+let g:syntastic_python_checkers = ['flake8']
+
+let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['flake8']
 
 " autoformat
-augroup autoformat_settings
-    autocmd FileType python AutoFormatBuffer yapf
-augroup END
+"augroup autoformat_settings
+"    autocmd FileType python AutoFormatBuffer yapf
+"augroup END
 
 " open NERDTree automatically when vim starts up on opening a directory
 autocmd StdinReadPre * let s:std_in=1
@@ -224,3 +228,6 @@ au BufNewFile,BufRead *.py
 
 :command EDITVIM tabnew<Space>$MYVIMRC
 :command RELOADVIM so<Space>%<cr>
+
+" Install FZF per documentation
+set rtp+=/usr/local/opt/fzf
