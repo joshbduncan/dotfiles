@@ -2,9 +2,6 @@
 export ZSH="/Users/jbd/.oh-my-zsh"
 ZSH_THEME="jdizzle"
 
-# Setup FZF
-export FZF_BASE=/usr/local/bin/fzf
-
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(
@@ -40,3 +37,11 @@ source ~/.aliases
 export VIRTUAL_ENV_DISABLE_PROMPT=
 export PYTHONPATH="${PYTHONPATH}:/Users/jbd/Library/Python/3.7/bin/"
 export PATH="${PATH}:/Users/jbd/Library/Python/3.7/bin/"
+
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/Users/jbd/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+
+# Setup FZF
+export FZF_BASE=/usr/local/bin/fzf
+export FZF_COMPLETION_TRIGGER='??'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

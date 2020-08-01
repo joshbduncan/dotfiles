@@ -45,6 +45,7 @@ alias mem='top -o rsize'
 alias todo='python3 ~/Dropbox/Dev/scripts/todo-grabber.py'
 alias tictactoe='python3 ~/Dropbox/Dev/projects/games/tic-tac-toe/tic-tac-toe.py'
 alias expenses='python3 ~/Dropbox/Dev/scripts/airtable-expenses.py'
+alias market='python3 ~/Dropbox/Dev/scripts/market.py'
 
 # Python Virtual Environments
 alias vmake='python3 -m venv venv'
