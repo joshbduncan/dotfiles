@@ -31,8 +31,14 @@ let g:dracula_italic = 0
 call plug#begin('~/.vim/plugged')
 
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'majutsushi/tagbar'
+Plug 'scrooloose/syntastic'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'lepture/vim-jinja'
 
 call plug#end()
 
@@ -51,6 +57,9 @@ inoremap ,, <Esc>
 nmap <leader>s :source %<cr>
 nmap <leader>w :w<cr>
 nmap <leader>q :q!<cr>
+
+nmap <leader>\ :NERDTreeToggle<cr>
+nmap <leader>t :TagbarToggle<cr>
 
 " BUFFERS
 let g:airline#extensions#tabline#enabled = 1
