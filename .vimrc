@@ -25,6 +25,11 @@ set incsearch
 set pastetoggle=<F2>
 set mouse=a
 
+" INDENT/UNINDENT WITH TAB/SHIFT-TAB
+nmap <Tab> >>
+imap <S-Tab> <Esc><<i
+nmap <S-tab> <<
+
 let g:dracula_italic = 0
 
 " PLUG-INS https://github.com/junegunn/vim-plug
@@ -58,7 +63,14 @@ nmap <leader>s :source %<cr>
 nmap <leader>w :w<cr>
 nmap <leader>q :q!<cr>
 
+nmap<leader>mo :set mouse=a<cr>
+nmap<leader>mx :set mouse=<cr>
+
+" NERDTREE
 nmap <leader>\ :NERDTreeToggle<cr>
+let g:NERDTreeShowHidden=1
+
+" TAGBAR
 nmap <leader>t :TagbarToggle<cr>
 
 " BUFFERS
@@ -69,13 +81,14 @@ set splitbelow
 set splitright
 
 nmap <leader>bn :enew<cr>
-nmap <leader>bl :ls<cr>
+nmap <leader>bb :ls<cr>
 nmap <leader>bs :sbn<cr>
 nmap <leader>bv :vnew<cr>
 nmap <leader>bl :bnext<cr>
 nmap <leader>bh :bprevious<cr>
 nmap <leader>bq :bp <bar> bd #<cr>
 
+" WINDOW MOVEMENTS
 nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
 nnoremap <C-L> <C-W>l
