@@ -12,7 +12,7 @@ plugins=(
 	colored-man-pages
 	osx
 	vi-mode
-        fzf
+    fzf
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -44,4 +44,5 @@ HEROKU_AC_ZSH_SETUP_PATH=/Users/jbd/Library/Caches/heroku/autocomplete/zsh_setup
 # Setup FZF
 export FZF_BASE=/usr/local/bin/fzf
 export FZF_COMPLETION_TRIGGER='??'
+bindkey "ç" fzf-cd-widget
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
