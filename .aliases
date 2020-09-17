@@ -53,6 +53,9 @@ alias vstart='source venv/bin/activate'
 alias vrestart='deactivate; source venv/bin/activate'
 alias vend='deactivate'
 
+# Python Flask Project Setup
+alias flask-setup='~/Dropbox/Dev/scripts/flask-setup.sh'
+
 # Common Directories
 alias desktop='cd ~/Desktop'
 alias dropbox='cd ~/Dropbox'

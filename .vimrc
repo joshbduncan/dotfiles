@@ -44,6 +44,7 @@ Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'lepture/vim-jinja'
+Plug 'liuchengxu/vim-which-key'
 
 call plug#end()
 
@@ -58,6 +59,8 @@ let g:airline_powerline_fonts = 1
 nnoremap <SPACE> <Nop>
 let mapleader=" " 
 inoremap ,, <Esc>
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+set timeoutlen=500
 
 nmap <leader>s :source %<cr>
 nmap <leader>w :w<cr>
