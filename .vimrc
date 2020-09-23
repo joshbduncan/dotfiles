@@ -45,6 +45,9 @@ Plug 'scrooloose/syntastic'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'lepture/vim-jinja'
 Plug 'liuchengxu/vim-which-key'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
 
@@ -70,7 +73,8 @@ nmap<leader>mo :set mouse=a<cr>
 nmap<leader>mx :set mouse=<cr>
 
 " NERDTREE
-nmap <leader>\ :NERDTreeToggle<cr>
+nmap <C-\> :NERDTreeToggle<cr>
+" nmap <leader>\ :NERDTreeToggle<cr>
 let g:NERDTreeShowHidden=1
 
 " TAGBAR
@@ -82,6 +86,9 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 set hidden
 set splitbelow
 set splitright
+
+" FZF
+nmap <C-p> :GFiles<cr>
 
 nmap <leader>bn :enew<cr>
 nmap <leader>bb :ls<cr>

@@ -21,6 +21,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Setup VI mode
 export KEYTIMEOUT=1
+    # fix delete key mess
+    bindkey    "^[[3~"          delete-char 
+    bindkey    "^[3;5~"         delete-char
 
 # zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
@@ -31,12 +34,12 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Set personal aliases
+# Source personal aliases
 source ~/.aliases
 
 export VIRTUAL_ENV_DISABLE_PROMPT=
-export PYTHONPATH="${PYTHONPATH}:/Users/jbd/Library/Python/3.7/bin/"
-export PATH="${PATH}:/Users/jbd/Library/Python/3.7/bin/"
+# export PYTHONPATH="${PYTHONPATH}:/Users/jbd/Library/Python/3.7/bin/"
+# export PATH="${PATH}:/Users/jbd/Library/Python/3.7/bin/"
 
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/jbd/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
