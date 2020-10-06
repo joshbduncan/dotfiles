@@ -8,11 +8,8 @@ alias messydesk="defaults write com.apple.finder CreateDesktop true; killall Fin
 
 # Edit/Reload zsh profile
 alias editprofile='vim ~/Dropbox/Dev/dotfiles/.zshrc'
-alias codeprofile='code ~/Dropbox/Dev/dotfiles/.zshrc'
 alias editaliases='vim ~/Dropbox/Dev/dotfiles/.aliases'
-alias codealiases='code ~/Dropbox/Dev/dotfiles/.aliases'
 alias reload='source ~/.zshrc'
-alias dotfiles='cd ~/Dropbox/Dev/dotfiles'
 
 # Open Common Mac Programs
 alias text='open -a TextEdit'
@@ -59,6 +56,7 @@ alias flask-setup='~/Dropbox/Dev/scripts/flask-setup.sh'
 # Common Directories
 alias desktop='cd ~/Desktop'
 alias dropbox='cd ~/Dropbox'
+alias dotfiles='cd ~/Dropbox/Dev/dotfiles'
 alias dev='cd ~/dev'
 alias projects='cd ~/dev/projects'
 alias scripts='cd ~/dev/scripts'

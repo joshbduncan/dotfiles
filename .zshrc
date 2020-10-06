@@ -1,23 +1,29 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/jbd/.oh-my-zsh"
+# export ZSH="/Users/jbd/.oh-my-zsh"
+# export ZSH="~/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
+
+# Set name of the theme to load
 ZSH_THEME="jdizzle"
 
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(
-	git
-	python
-	pip
-	virtualenv
-	colored-man-pages
-	osx
-	vi-mode
+    colored-man-pages
     fzf
+    git
+    # osx
+    pip
+    # python
+    vi-mode
+    virtualenv
+    zsh-autosuggestions
+    # must be last
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+source ~/.aliases
 
 # Setup VI mode
 export KEYTIMEOUT=1
@@ -25,21 +31,7 @@ export KEYTIMEOUT=1
     bindkey    "^[[3~"          delete-char 
     bindkey    "^[3;5~"         delete-char
 
-# zsh-completions
-fpath=(/usr/local/share/zsh-completions $fpath)
-
-# zsh-autosuggestions
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# syntax highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Source personal aliases
-source ~/.aliases
-
 export VIRTUAL_ENV_DISABLE_PROMPT=
-# export PYTHONPATH="${PYTHONPATH}:/Users/jbd/Library/Python/3.7/bin/"
-# export PATH="${PATH}:/Users/jbd/Library/Python/3.7/bin/"
 
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/jbd/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
