@@ -18,6 +18,7 @@ plugins=(
     zsh-autosuggestions
     # must be last
     zsh-syntax-highlighting
+    poetry
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -41,3 +42,9 @@ export FZF_BASE=/usr/local/bin/fzf
 export FZF_COMPLETION_TRIGGER='??'
 bindkey "ç" fzf-cd-widget
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
+
+
