@@ -37,6 +37,9 @@ export VIRTUAL_ENV_DISABLE_PROMPT=
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/jbd/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
 # Setup FZF
 export FZF_BASE=/usr/local/bin/fzf
 export FZF_COMPLETION_TRIGGER='??'
