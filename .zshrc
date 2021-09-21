@@ -40,6 +40,10 @@ HEROKU_AC_ZSH_SETUP_PATH=/Users/jbd/Library/Caches/heroku/autocomplete/zsh_setup
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
+# setup bat to use dracula
+# export BAT_THEME="Dracula"
+export BAT_THEME="DarkNeon"
+
 # Setup FZF
 export FZF_BASE=/usr/local/bin/fzf
 export FZF_COMPLETION_TRIGGER='??'

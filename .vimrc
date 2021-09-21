@@ -90,11 +90,13 @@ Plug 'psf/black', { 'branch': 'stable' }
 call plug#end()
 
 " set color scheme
-set background=dark
 colorscheme dracula
 let g:dracula_italic = 0
 let g:lightline = {'colorscheme': 'wombat',}
 set laststatus=2
+set background=dark
+syntax enable
+set termguicolors
 
 " keymappings
 nnoremap <SPACE> <Nop>
@@ -113,9 +115,9 @@ nmap <leader>x :.s/\[ \]/\[x\]<cr>
 nmap <leader>X :.s/\[x\]/\[ \]<cr>
 
 " copy to system clipboard
-" vnoremap <C-C> "+y
+vnoremap <leader>c "+y
 " paste from system clipboard
-" map <C-V> "+P
+nnoremap <leader>v "+P
 " reselect pasted text
 nnoremap gp `[v`]
 " yank to end of line
@@ -155,7 +157,7 @@ let g:syntastic_python_checkers = ['python']
 " let g:syntastic_html_checkers=['']
 
 " fzf
-nmap <C-f> :GFiles<cr>
+nmap <C-g> :GFiles<cr>
 nmap <C-p> :Files<cr>
 nmap <C-b> :Buffers<cr>
 " PASS OPTIONAL FLAGS TO RG
