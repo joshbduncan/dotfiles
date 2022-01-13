@@ -10,7 +10,7 @@ set noerrorbells
 " line numbering
 set number relativenumber
 
-" set file encoding
+" file encoding
 set encoding=utf-8
 
 " proper tabs
@@ -72,7 +72,7 @@ Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'itchyny/lightline.vim'
 Plug 'majutsushi/tagbar'
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'lepture/vim-jinja'
 Plug 'liuchengxu/vim-which-key'
@@ -122,7 +122,10 @@ nnoremap <leader>v "+P
 nnoremap gp `[v`]
 " yank to end of line
 nnoremap Y y$
-
+" prevent x, X, and delete from overriding the clipboard
+noremap x "_x
+noremap X "_X
+noremap <Del> "_x
 
 " keep everything centered 
 nnoremap n nzzzv
