@@ -10,11 +10,12 @@ alias messydesk="defaults write com.apple.finder CreateDesktop true; killall Fin
 alias editprofile='vim ~/.dotfiles/.zshrc'
 alias editaliases='vim ~/.dotfiles/.aliases'
 alias reload='source ~/.zshrc'
+alias editvim='vim ~/.vimrc'
 
 # Open Common Mac Programs
 alias text='open -a TextEdit'
 alias pre='open -a Preview'
-# alias new_job='python3 ~/Dropbox/Dev/projects/DNKD/new-project/new_project.py'
+# alias new_job='python3 ~/Dropbox/dev/projects/DNKD/new-project/new_project.py'
 alias ipython='IPython'
 
 # Common Commands
@@ -41,29 +42,32 @@ alias sizeof='du -sh'
 # alias todo='for f in *.py; do echo "File $f TODO entries..."; grep TODO $f | tr -s " " | grep TODO; done;'
 
 # Scripts
-alias todo='python3 ~/Dropbox/Dev/scripts/todo-grabber.py'
-alias tictactoe='python3 ~/Dropbox/Dev/projects/games/tic-tac-toe/tic-tac-toe.py'
-alias expenses='/Users/jbd/Dropbox/Dev/projects/airtable-expenses/run'
-alias market='python3 ~/Dropbox/Dev/scripts/market.py'
+alias todo='python3 ~/Dropbox/dev/scripts/todo-grabber.py'
+alias tictactoe='python3 ~/Dropbox/dev/projects/games/tic-tac-toe/tic-tac-toe.py'
+alias expenses='/Users/jbd/Dropbox/dev/work/expense-report/run'
+alias market='python3 ~/Dropbox/dev/scripts/market.py'
 
 # Python Virtual Environments
 alias vmake='python3 -m venv venv'
+alias vs='source venv/bin/activate'
 alias vstart='source venv/bin/activate'
-alias vrestart='deactivate; source venv/bin/activate'
+alias vr='deactivate; source venv/bin/activate'
+alias ve='deactivate'
 alias vend='deactivate'
 
 # Python Flask Project Setup
-alias flask-setup='~/Dropbox/Dev/scripts/flask-setup.sh'
+alias flask-setup='~/Dropbox/dev/scripts/flask-setup.sh'
 
 # Common Directories
 alias desktop='cd ~/Desktop'
 alias dropbox='cd ~/Dropbox'
 alias dotfiles='cd ~/.dotfiles'
-alias dev='cd ~/Dropbox/Dev'
-alias projects='cd ~/Dropbox/Dev/projects'
+alias dev='cd ~/Dropbox/dev'
+alias projects='cd ~/Dropbox/dev/projects'
 alias scripts='cd ~/Dropbox/dev/scripts'
-alias notebooks='cd ~/Dropbox/Dev/jupyter'
-alias blog='cd ~/Dropbox/blog'
+alias notebooks='cd ~/Dropbox/dev/jupyter'
+alias blog='cd ~/Dropbox/dev/joshd_xyz/'
+alias notes='cd ~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Notes/'
 
 # Do/Run/Build
 alias run='./run'

@@ -1,41 +1,109 @@
-" enable mouse
-set mouse=a
+syntax on
 
-" basic syntax highlighting
-syntax enable
+" set leader key
+nnoremap <SPACE> <Nop>
+let mapleader=" " 
 
-" no beeping
-set noerrorbells
 
-" line numbering
-set number relativenumber
-
-" file encoding
-set encoding=utf-8
-
-" proper tabs
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
-
-" indenting
-set autoindent smartindent
-
-" don't wrap long lines
-set nowrap
-
-" searching
-set ignorecase smartcase incsearch
-
-" enable proper backspace support
-set backspace=indent,eol,start
-
-" keep line in check
-set colorcolumn=80
-
-" file handling
+" the basics
 set autochdir noswapfile nobackup
-
-" put splits in the right spots
+set autoindent smartindent
+set backspace=indent,eol,start
+set cmdheight=2
+set clipboard=unnamed
+set colorcolumn=80
+set completeopt=menuone,noselect
+set conceallevel=0
+set cursorline
+set encoding=utf-8
+" stop auto commenting
+set formatoptions-=r formatoptions-=c formatoptions-=o
+set hidden
+set ignorecase smartcase incsearch hlsearch
+set laststatus=2
+set mouse=a
+set nobackup nowritebackup
+set noerrorbells
+set nomodeline
+set nowrap
+set number relativenumber
+set pumheight=10
+set scrolloff=5 sidescrolloff=5
+set shortmess+=c
+set signcolumn=yes
+set spelllang=en_us
 set splitbelow splitright
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+set termguicolors
+set timeoutlen=500
+set undodir=~/.vim/undodir undofile
+set updatetime=300
+set whichwrap=<,>,[,],h,l
+" command mode completion
+set wildmode=longest,list,full
+
+" plug-ins https://github.com/junegunn/vim-plug
+call plug#begin('~/.vim/plugged')
+
+" color scheme
+Plug 'dracula/vim', { 'as': 'dracula' }
+
+" Plug 'preservim/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'itchyny/lightline.vim'
+" Plug 'majutsushi/tagbar'
+" Plug 'scrooloose/syntastic'
+" Plug 'vim-scripts/indentpython.vim'
+" Plug 'lepture/vim-jinja'
+
+" i'm getting old
+Plug 'liuchengxu/vim-which-key'
+
+" distraction free editing for markdown
+Plug 'junegunn/goyo.vim'
+Plug 'amix/vim-zenroom2'
+
+" ultisnips
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+" fzf vim integration
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+" easy commenting
+Plug 'tpope/vim-commentary'
+
+" git integration
+Plug 'tpope/vim-fugitive'
+
+" Plug 'itspriddle/vim-marked'
+" Plug 'dyng/ctrlsf.vim'
+" Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+" Plug 'markonm/traces.vim'
+" Plug 'junegunn/vim-peekaboo'
+
+" code completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" code formatting
+Plug 'psf/black', { 'branch': 'stable' }
+
+call plug#end()
+
+" set color scheme
+if ! exists('g:colors_name') || g:colors_name !=# 'dracula'
+    colorscheme dracula
+endif
+let g:dracula_italic=1
+let g:lightline = {'colorscheme': 'wombat',}
+
+" keymappings
+nnoremap <silent> <leader> :WhichKey '<Space>'<cr>
+nnoremap <leader>t :term<cr>
+nnoremap <leader>nh :nohlsearch<cr>
+nnoremap <leader>md :Goyo<cr>
+nnoremap <leader>s :setlocal spell!<cr>
 
 " window movements
 nnoremap <C-J> <C-W>j
@@ -43,81 +111,37 @@ nnoremap <C-K> <C-W>k
 nnoremap <C-L> <C-W>l
 nnoremap <C-H> <C-W>h
 
-" working with buffers
-set hidden
-nmap <leader>bn :enew<cr>
-nmap <leader>bv :vnew<cr>
-nmap <leader>bl :bnext<cr>
-nmap <leader>bh :bprevious<cr>
-
-" command mode completion
-set wildmode=longest,list,full
-
-" undo
-set undodir=~/.vim/undodir undofile
-
-" enable pasting from system clipboard
-set pastetoggle=<F2>
-
 " indent/unindent with tab/shift-tab
 nmap <Tab> >>
 imap <S-Tab> <Esc><<i
 nmap <S-tab> <<
 
-" plug-ins https://github.com/junegunn/vim-plug
-call plug#begin('~/.vim/plugged')
-
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'itchyny/lightline.vim'
-Plug 'majutsushi/tagbar'
-" Plug 'scrooloose/syntastic'
-Plug 'vim-scripts/indentpython.vim'
-Plug 'lepture/vim-jinja'
-Plug 'liuchengxu/vim-which-key'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-commentary'
-Plug 'itspriddle/vim-marked'
-Plug 'dyng/ctrlsf.vim'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'markonm/traces.vim'
-Plug 'junegunn/vim-peekaboo'
-Plug 'Valloric/YouCompleteMe'
-Plug 'psf/black', { 'branch': 'stable' }
-
-call plug#end()
-
-" set color scheme
-colorscheme dracula
-let g:dracula_italic = 0
-let g:lightline = {'colorscheme': 'wombat',}
-set laststatus=2
-set background=dark
-syntax enable
-set termguicolors
-
-" keymappings
-nnoremap <SPACE> <Nop>
-let mapleader=" " 
-nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
-set timeoutlen=500
-
-" source .vimrc, write buffer, quit buffer
-nmap <leader>s :so %<cr>
+" working with buffers 
+nmap <leader>r :source %<cr>
 nmap <leader>w :w<cr>
-nmap <leader>q :q!<cr>
+nmap <leader>q :q<cr>
+nmap <leader>Q :q!<cr>
+nmap <leader>n :enew<cr>
+nmap <leader>d :bdelete<cr>
+nmap <leader>D :bdelete!<cr>
 
+" moving through buffers
+nmap <leader>bv :vnew<cr>
+nmap <leader>bl :bnext<cr>
+nmap <leader>bh :bprevious<cr>
+
+" editing
+nnoremap <leader>dt :put=strftime('%Y-%m-%d')<cr>
 " markdown task done/undone
-nmap <leader>t o- [ ] 
-nmap <leader>x :.s/\[ \]/\[x\]<cr>
-nmap <leader>X :.s/\[x\]/\[ \]<cr>
+nnoremap <leader>mtd o- [ ] 
+nnoremap <leader>x :.s/\[ \]/\[x\]<cr>
+nnoremap <leader>X :.s/\[x\]/\[ \]<cr>
 
+" copy and pasting
 " copy to system clipboard
-vnoremap <leader>c "+y
+nnoremap <leader>y "*y
 " paste from system clipboard
-nnoremap <leader>v "+P
+nnoremap <leader>p "*p
 " reselect pasted text
 nnoremap gp `[v`]
 " yank to end of line
@@ -143,36 +167,48 @@ nnoremap <leader>k :m .-2<cr>==
 " plug-in settings
 
 " nerdtree settings
-nmap <C-\> :NERDTreeToggle<cr>
-let g:NERDTreeShowHidden=1
-let g:NERDTreeAutoDeleteBuffer=1
+" nmap <C-\> :NERDTreeToggle<cr>
+" let g:NERDTreeShowHidden=1
+" let g:NERDTreeAutoDeleteBuffer=1
 
 " enable tagbar
-nmap <C-t> :TagbarToggle<cr>
+" nmap <C-t> :TagbarToggle<cr>
 
 " syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_python_exec = 'python3'
-let g:syntastic_python_checkers = ['python']
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_python_python_exec = 'python3'
+" let g:syntastic_python_checkers = ['python']
 " let g:syntastic_html_checkers=['']
+
+" coc
+source ~/coc.vim
 
 " fzf
 nmap <C-g> :GFiles<cr>
+nmap <leader>gs :GFiles?<cr>
+nmap <leader>gc :BCommits<cr>
 nmap <C-p> :Files<cr>
 nmap <C-b> :Buffers<cr>
 " PASS OPTIONAL FLAGS TO RG
 " ex. :Rg search-term -g '*.md'
 " command! -bang -nargs=* Rg call fzf#vim#grep("rg --column " . <q-args>, 1, <bang>0)
 
+"ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsListSnippets="<c-tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+
 " ctrlsf
-let g:ctrlsf_backend = '/usr/local/bin/rg'
+" let g:ctrlsf_backend = '/usr/local/bin/rg'
 " search across project
-nmap <leader>a :CtrlSF -R ""<Left>
+" nmap <leader>a :CtrlSF -R ""<Left>
 " search for word under cursor
-nmap <leader>A <Plug>CtrlSFCwordPath -W<cr>
+" nmap <leader>A <Plug>CtrlSFCwordPath -W<cr>
 
 " run black on python save
 autocmd BufWritePre *.py execute ':Black'
