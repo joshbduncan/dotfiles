@@ -12,12 +12,6 @@ alias editaliases='vim ~/.dotfiles/.aliases'
 alias reload='source ~/.zshrc'
 alias editvim='vim ~/.vimrc'
 
-# Open Common Mac Programs
-alias text='open -a TextEdit'
-alias pre='open -a Preview'
-# alias new_job='python3 ~/Dropbox/dev/projects/DNKD/new-project/new_project.py'
-alias ipython='IPython'
-
 # Common Commands
 alias l='exa'
 alias ls='exa -GFh'
@@ -30,6 +24,8 @@ alias h='history'
 alias cls='clear;ls'
 alias gs='git status'
 alias gwhoops="git reset --soft HEAD~1"
+alias python="python3"
+alias ipython='IPython'
 
 # Info Commands
 alias diskspace='df -h /Volumes/Macintosh\ HD'
@@ -39,7 +35,6 @@ alias ip='curl icanhazip.com'
 alias cpu='top -o cpu'
 alias mem='top -o rsize'
 alias sizeof='du -sh'
-# alias todo='for f in *.py; do echo "File $f TODO entries..."; grep TODO $f | tr -s " " | grep TODO; done;'
 
 # Scripts
 alias todo='python3 ~/Dropbox/dev/scripts/todo-grabber.py'
@@ -48,6 +43,7 @@ alias expenses='/Users/jbd/Dropbox/dev/work/expense-report/run'
 alias market='python3 ~/Dropbox/dev/scripts/market.py'
 
 # Python Virtual Environments
+alias vm='python3 -m venv venv'
 alias vmake='python3 -m venv venv'
 alias vs='source venv/bin/activate'
 alias vstart='source venv/bin/activate'
@@ -55,18 +51,15 @@ alias vr='deactivate; source venv/bin/activate'
 alias ve='deactivate'
 alias vend='deactivate'
 
-# Python Flask Project Setup
-alias flask-setup='~/Dropbox/dev/scripts/flask-setup.sh'
-
 # Common Directories
 alias desktop='cd ~/Desktop'
 alias dropbox='cd ~/Dropbox'
 alias dotfiles='cd ~/.dotfiles'
-alias dev='cd ~/Dropbox/dev'
-alias projects='cd ~/Dropbox/dev/projects'
-alias scripts='cd ~/Dropbox/dev/scripts'
-alias notebooks='cd ~/Dropbox/dev/jupyter'
-alias blog='cd ~/Dropbox/dev/joshd_xyz/'
+alias dev='cd ~/Dropbox/DEV'
+alias projects='cd ~/Dropbox/DEV/projects'
+alias scripts='cd ~/Dropbox/DEV/scripts'
+alias notebooks='cd ~/Dropbox/DEV/jupyter'
+alias joshdxyz='cd ~/Dropbox/JOSHD.XYZ/'
 alias notes='cd ~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Notes/'
 
 # Do/Run/Build

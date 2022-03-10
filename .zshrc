@@ -36,7 +36,7 @@ source $ZSH/oh-my-zsh.sh
 # user configuration
 
 # show dotfile with auto-completion
-setopt globdots
+# setopt globdots
 
 # setup vim as editor
 export EDITOR='vim'

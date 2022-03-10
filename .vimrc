@@ -24,6 +24,7 @@ set laststatus=2
 set mouse=a
 set nobackup nowritebackup
 set noerrorbells
+set linebreak
 set nomodeline
 set nowrap
 set number relativenumber
@@ -62,6 +63,7 @@ Plug 'liuchengxu/vim-which-key'
 " distraction free editing for markdown
 Plug 'junegunn/goyo.vim'
 Plug 'amix/vim-zenroom2'
+Plug 'itspriddle/vim-marked'
 
 " ultisnips
 Plug 'SirVer/ultisnips'
@@ -102,7 +104,7 @@ let g:lightline = {'colorscheme': 'wombat',}
 nnoremap <silent> <leader> :WhichKey '<Space>'<cr>
 nnoremap <leader>t :term<cr>
 nnoremap <leader>nh :nohlsearch<cr>
-nnoremap <leader>md :Goyo<cr>
+nnoremap <leader>mdw :Goyo<cr>
 nnoremap <leader>s :setlocal spell!<cr>
 
 " window movements
@@ -133,7 +135,7 @@ nmap <leader>bh :bprevious<cr>
 " editing
 nnoremap <leader>dt :put=strftime('%Y-%m-%d')<cr>
 " markdown task done/undone
-nnoremap <leader>mtd o- [ ] 
+nnoremap <leader>mdt o- [ ] 
 nnoremap <leader>x :.s/\[ \]/\[x\]<cr>
 nnoremap <leader>X :.s/\[x\]/\[ \]<cr>
 
@@ -184,14 +186,14 @@ nnoremap <leader>k :m .-2<cr>==
 " let g:syntastic_html_checkers=['']
 
 " coc
-source ~/coc.vim
+source ~/.coc.vim
 
 " fzf
-nmap <C-g> :GFiles<cr>
+nmap <leader>gf :GFiles<cr>
 nmap <leader>gs :GFiles?<cr>
 nmap <leader>gc :BCommits<cr>
-nmap <C-p> :Files<cr>
-nmap <C-b> :Buffers<cr>
+nmap <leader>ff :Files<cr>
+nmap <leader>fb :Buffers<cr>
 " PASS OPTIONAL FLAGS TO RG
 " ex. :Rg search-term -g '*.md'
 " command! -bang -nargs=* Rg call fzf#vim#grep("rg --column " . <q-args>, 1, <bang>0)
