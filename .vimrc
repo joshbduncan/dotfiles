@@ -4,43 +4,56 @@ syntax on
 nnoremap <SPACE> <Nop>
 let mapleader=" " 
 
+set nocompatible
 
 " the basics
-set autochdir noswapfile nobackup
-set autoindent smartindent
+set autoindent
 set backspace=indent,eol,start
-set cmdheight=2
 set clipboard=unnamed
+set cmdheight=2
 set colorcolumn=80
 set completeopt=menuone,noselect
 set conceallevel=0
 set cursorline
 set encoding=utf-8
-" stop auto commenting
-set formatoptions-=r formatoptions-=c formatoptions-=o
+set expandtab
+set formatoptions-=c
+set formatoptions-=o
+set formatoptions-=r
 set hidden
-set ignorecase smartcase incsearch hlsearch
+set hlsearch
+set ignorecase
+set incsearch
+set iskeyword+=-
 set laststatus=2
-set mouse=a
-set nobackup nowritebackup
-set noerrorbells
 set linebreak
+set mouse=a
+set nobackup
+set noerrorbells
 set nomodeline
+set noswapfile
 set nowrap
-set number relativenumber
-set pumheight=10
-set scrolloff=5 sidescrolloff=5
+set nowritebackup
+set number
+set relativenumber
+set scrolloff=5
+set shiftwidth=4
 set shortmess+=c
+set sidescrolloff=5
 set signcolumn=yes
+set smartcase
+set smartindent
+set softtabstop=4
 set spelllang=en_us
-set splitbelow splitright
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+set splitbelow
+set splitright
+set tabstop=4
 set termguicolors
 set timeoutlen=500
-set undodir=~/.vim/undodir undofile
+set undodir=~/.vim/undodir
+set undofile
 set updatetime=300
 set whichwrap=<,>,[,],h,l
-" command mode completion
 set wildmode=longest,list,full
 
 " plug-ins https://github.com/junegunn/vim-plug
@@ -49,13 +62,16 @@ call plug#begin('~/.vim/plugged')
 " color scheme
 Plug 'dracula/vim', { 'as': 'dracula' }
 
-" Plug 'preservim/nerdtree'
-" Plug 'Xuyuanp/nerdtree-git-plugin'
-" Plug 'itchyny/lightline.vim'
-" Plug 'majutsushi/tagbar'
-" Plug 'scrooloose/syntastic'
+" nerdtree
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+Plug 'itchyny/lightline.vim'
+Plug 'majutsushi/tagbar'
+Plug 'scrooloose/syntastic'
 " Plug 'vim-scripts/indentpython.vim'
 " Plug 'lepture/vim-jinja'
+Plug 'Glench/Vim-Jinja2-Syntax'
 
 " i'm getting old
 Plug 'liuchengxu/vim-which-key'
@@ -80,7 +96,10 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 
 " Plug 'itspriddle/vim-marked'
-" Plug 'dyng/ctrlsf.vim'
+
+" code search
+Plug 'dyng/ctrlsf.vim'
+
 " Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " Plug 'markonm/traces.vim'
 " Plug 'junegunn/vim-peekaboo'
@@ -102,33 +121,38 @@ let g:lightline = {'colorscheme': 'wombat',}
 
 " keymappings
 nnoremap <silent> <leader> :WhichKey '<Space>'<cr>
+nnoremap <esc><esc><esc> :nohl<cr>
 nnoremap <leader>t :term<cr>
 nnoremap <leader>nh :nohlsearch<cr>
 nnoremap <leader>mdw :Goyo<cr>
 nnoremap <leader>s :setlocal spell!<cr>
 
 " window movements
-nnoremap <C-J> <C-W>j
-nnoremap <C-K> <C-W>k
-nnoremap <C-L> <C-W>l
-nnoremap <C-H> <C-W>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+
+" resize splits
+nnoremap <C-Up> :resize -2<cr>
+nnoremap <C-Down> :resize +2<cr>
+nnoremap <C-Left> :vertical resize -2<cr>
+nnoremap <C-Right> :vertical resize +2<cr>
 
 " indent/unindent with tab/shift-tab
 nmap <Tab> >>
-imap <S-Tab> <Esc><<i
 nmap <S-tab> <<
+imap <S-Tab> <Esc><<i
+vmap <Tab> >gv
+vmap <S-Tab> <gv
 
 " working with buffers 
-nmap <leader>r :source %<cr>
 nmap <leader>w :w<cr>
 nmap <leader>q :q<cr>
 nmap <leader>Q :q!<cr>
 nmap <leader>n :enew<cr>
 nmap <leader>d :bdelete<cr>
 nmap <leader>D :bdelete!<cr>
-
-" moving through buffers
-nmap <leader>bv :vnew<cr>
 nmap <leader>bl :bnext<cr>
 nmap <leader>bh :bprevious<cr>
 
@@ -159,37 +183,37 @@ nnoremap N Nzzzv
 nnoremap J mzJ`z
 
 " moving text around
-vnoremap <C-j> :m '>+1<cr>gv=gv 
-vnoremap <C-k> :m '<-2<cr>gv=gv
-inoremap <C-j> <esc>:m .+1<cr>==gi 
-inoremap <C-k> <esc>:m .-2<cr>==gi
-nnoremap <leader>j :m .+1<cr>==
-nnoremap <leader>k :m .-2<cr>==
+nnoremap <A-j>j :m .+1<cr>==
+nnoremap <A-k>k :m .-2<cr>==
+inoremap <A-j> <esc>:m .+1<cr>==gi 
+inoremap <A-k> <esc>:m .-2<cr>==gi
+vnoremap <A-j> :m '>+1<cr>gv=gv 
+vnoremap <A-k> :m '<-2<cr>gv=gv
 
 " plug-in settings
 
 " nerdtree settings
-" nmap <C-\> :NERDTreeToggle<cr>
-" let g:NERDTreeShowHidden=1
-" let g:NERDTreeAutoDeleteBuffer=1
+nmap <C-\> :NERDTreeToggle<cr>
+let g:NERDTreeShowHidden=1
+let g:NERDTreeAutoDeleteBuffer=1
 
 " enable tagbar
 " nmap <C-t> :TagbarToggle<cr>
 
 " syntastic
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 0
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_python_python_exec = 'python3'
-" let g:syntastic_python_checkers = ['python']
-" let g:syntastic_html_checkers=['']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_python_exec = 'python3'
+let g:syntastic_python_checkers = ['python']
+let g:syntastic_html_checkers=['']
 
 " coc
-source ~/.coc.vim
+source ~/.dotfiles/.coc.vim
 
 " fzf
-nmap <leader>gf :GFiles<cr>
+nmap <C-p> :GFiles<cr>
 nmap <leader>gs :GFiles?<cr>
 nmap <leader>gc :BCommits<cr>
 nmap <leader>ff :Files<cr>
@@ -206,11 +230,14 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 
 " ctrlsf
-" let g:ctrlsf_backend = '/usr/local/bin/rg'
+let g:ctrlsf_backend = '/usr/local/bin/rg'
 " search across project
-" nmap <leader>a :CtrlSF -R ""<Left>
+nmap <leader>a :CtrlSF -R ""<Left>
 " search for word under cursor
-" nmap <leader>A <Plug>CtrlSFCwordPath -W<cr>
+nmap <leader>A <Plug>CtrlSFCwordPath -W<cr>
 
 " run black on python save
 autocmd BufWritePre *.py execute ':Black'
+
+" setup custom tabs for specific files
+autocmd Filetype javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab

@@ -20,7 +20,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # Add wisely, as too many plugins slow down shell startup.
 
 plugins=(
-    fzf
     git
     pip
     vi-mode
@@ -35,14 +34,18 @@ source $ZSH/oh-my-zsh.sh
 
 # user configuration
 
+# move dump files out of home directory
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
+
 # show dotfile with auto-completion
 # setopt globdots
 
 # setup vim as editor
 export EDITOR='vim'
 # setup edit command in vim by pressing spacebar in command mode
-zle -N edit-command-line
-bindkey -M vicmd '\' edit-command-line
+# autoload edit-command-line
+# zle -N edit-command-line
+bindkey -M vicmd 'v' edit-command-line
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -70,16 +73,14 @@ bindkey "^[3;5~" delete-char
 # change bat theme
 export BAT_THEME="Dracula"
 
-# setup fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_BASE=/usr/local/bin/fzf
-export FZF_COMPLETION_TRIGGER='??'
-# fix alt-c 
-# bindkey "ç" fzf-cd-widget
-export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4'
-
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/jbd/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 
 # Created by `pipx` on 2022-02-07 16:58:45
 export PATH="$PATH:/Users/jbd/.local/bin"
+
+# setup fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*"'
+export FZF_COMPLETION_TRIGGER='??'
+export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4'

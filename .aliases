@@ -9,7 +9,7 @@ alias messydesk="defaults write com.apple.finder CreateDesktop true; killall Fin
 # Edit/Reload zsh profile
 alias editprofile='vim ~/.dotfiles/.zshrc'
 alias editaliases='vim ~/.dotfiles/.aliases'
-alias reload='source ~/.zshrc'
+alias reload='exec zsh'
 alias editvim='vim ~/.vimrc'
 
 # Common Commands
@@ -44,7 +44,7 @@ alias market='python3 ~/Dropbox/dev/scripts/market.py'
 
 # Python Virtual Environments
 alias vm='python3 -m venv venv'
-alias vmake='python3 -m venv venv'
+alias vmake='python3 -m venv venv && source venv/bin/activate'
 alias vs='source venv/bin/activate'
 alias vstart='source venv/bin/activate'
 alias vr='deactivate; source venv/bin/activate'
@@ -59,7 +59,7 @@ alias dev='cd ~/Dropbox/DEV'
 alias projects='cd ~/Dropbox/DEV/projects'
 alias scripts='cd ~/Dropbox/DEV/scripts'
 alias notebooks='cd ~/Dropbox/DEV/jupyter'
-alias joshdxyz='cd ~/Dropbox/JOSHD.XYZ/'
+alias joshdxyz='cd ~/Dropbox/BLOG'
 alias notes='cd ~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Notes/'
 
 # Do/Run/Build
