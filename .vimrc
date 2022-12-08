@@ -35,6 +35,7 @@ set noswapfile
 set nowrap
 set nowritebackup
 set number
+set numberwidth=4
 set relativenumber
 set scrolloff=5
 set shiftwidth=4
@@ -70,7 +71,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
 " Plug 'vim-scripts/indentpython.vim'
-" Plug 'lepture/vim-jinja'
 Plug 'Glench/Vim-Jinja2-Syntax'
 
 " i'm getting old
@@ -95,14 +95,18 @@ Plug 'tpope/vim-commentary'
 " git integration
 Plug 'tpope/vim-fugitive'
 
-" Plug 'itspriddle/vim-marked'
+Plug 'itspriddle/vim-marked'
 
 " code search
 Plug 'dyng/ctrlsf.vim'
 
 " Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-" Plug 'markonm/traces.vim'
-" Plug 'junegunn/vim-peekaboo'
+
+Plug 'markonm/traces.vim'
+
+" working with registers
+" Peekaboo extends " and @ in normal mode and <CTRL-R> in insert mode so you can see the contents of the registers.
+Plug 'junegunn/vim-peekaboo'
 
 " code completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -183,12 +187,12 @@ nnoremap N Nzzzv
 nnoremap J mzJ`z
 
 " moving text around
-nnoremap <A-j>j :m .+1<cr>==
-nnoremap <A-k>k :m .-2<cr>==
-inoremap <A-j> <esc>:m .+1<cr>==gi 
-inoremap <A-k> <esc>:m .-2<cr>==gi
-vnoremap <A-j> :m '>+1<cr>gv=gv 
-vnoremap <A-k> :m '<-2<cr>gv=gv
+nnoremap ∆ :m .+1<cr>==
+nnoremap ˚ :m .-2<cr>==
+inoremap ∆ <esc>:m .+1<cr>==gi 
+inoremap ˚ <esc>:m .-2<cr>==gi
+vnoremap ∆ :m '>+1<cr>gv=gv 
+vnoremap ˚ :m '<-2<cr>gv=gv
 
 " plug-in settings
 
@@ -198,7 +202,7 @@ let g:NERDTreeShowHidden=1
 let g:NERDTreeAutoDeleteBuffer=1
 
 " enable tagbar
-" nmap <C-t> :TagbarToggle<cr>
+nmap <C-t> :TagbarToggle<cr>
 
 " syntastic
 let g:syntastic_always_populate_loc_list = 1

@@ -59,8 +59,9 @@ alias dev='cd ~/Dropbox/DEV'
 alias projects='cd ~/Dropbox/DEV/projects'
 alias scripts='cd ~/Dropbox/DEV/scripts'
 alias notebooks='cd ~/Dropbox/DEV/jupyter'
-alias joshdxyz='cd ~/Dropbox/BLOG'
+alias blog='cd ~/Dropbox/BLOG'
 alias notes='cd ~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Notes/'
 
 # Do/Run/Build
 alias run='./run'
+alias escompile='bash /Users/jbd/Dropbox/DEV/projects/extend-script-compiler/escompile.sh'
