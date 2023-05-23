@@ -41,6 +41,17 @@ alias todo='python3 ~/Dropbox/dev/scripts/todo-grabber.py'
 alias tictactoe='python3 ~/Dropbox/dev/projects/games/tic-tac-toe/tic-tac-toe.py'
 alias expenses='/Users/jbd/Dropbox/dev/work/expense-report/run'
 alias market='python3 ~/Dropbox/dev/scripts/market.py'
+alias aoc='cd ~/Desktop/aoc22 && vs && python3 aoc.py'
+
+openrepo () {
+    url=$(git remote get-url origin | sed 's/git@github.com:/https:\/\/github.com/')
+    open $url
+}
+
+# Python pip Global Install
+gpip() {
+  PIP_REQUIRE_VIRTUALENV=false pip "$@"
+}
 
 # Python Virtual Environments
 alias vm='python3 -m venv venv'
