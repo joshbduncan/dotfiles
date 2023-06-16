@@ -24,9 +24,9 @@ plugins=(
     pip
     vi-mode
     virtualenv
+    z
     zsh-autosuggestions
     zsh-syntax-highlighting
-    zsh-z
 )
 
 # source oh-my-zsh
@@ -79,6 +79,9 @@ HEROKU_AC_ZSH_SETUP_PATH=/Users/jbd/Library/Caches/heroku/autocomplete/zsh_setup
 # Created by `pipx` on 2022-02-07 16:58:45
 export PATH="$PATH:/Users/jbd/.local/bin"
 
+# add brew ruby path for gem installs
+export GEM_HOME="/opt/homebrew"
+
 # setup fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*"'
@@ -86,7 +89,7 @@ export FZF_COMPLETION_TRIGGER='??'
 export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4'
 
 # rust cargo
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 
 if [ -d "/usr/local/opt/ruby/bin" ]; then
   export PATH=/usr/local/opt/ruby/bin:$PATH

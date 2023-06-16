@@ -1,3 +1,5 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Homebrew Competions
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
