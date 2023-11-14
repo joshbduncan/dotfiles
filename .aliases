@@ -13,10 +13,10 @@ alias reload='exec zsh'
 alias editvim='vim ~/.vimrc'
 
 # Common Commands
-alias l='exa'
-alias ls='exa -GFh'
-alias ll='exa -l'
-alias la='exa -la'
+alias l='exa --icons --color=always'
+alias ls='exa -GFh --icons --color=always'
+alias ll='exa -l --icons --color=always'
+alias la='exa -la --icons --color=always'
 alias cat='bat'
 alias q='exit'
 alias c='clear'
@@ -26,6 +26,7 @@ alias gs='git status'
 alias gwhoops="git reset --soft HEAD~1"
 alias python="python3"
 alias ipython='IPython'
+alias fzf-preview='fzf --preview "bat --color=always {}"'
 
 # Info Commands
 alias diskspace='df -h /Volumes/Macintosh\ HD'
@@ -43,8 +44,12 @@ alias expenses='/Users/jbd/Dropbox/dev/work/expense-report/run'
 alias market='python3 ~/Dropbox/dev/scripts/market.py'
 alias aoc='cd ~/Desktop/aoc22 && vs && python3 aoc.py'
 
-openrepo () {
-    url=$(git remote get-url origin | sed 's/git@github.com:/https:\/\/github.com/')
+folder-destroyer () {
+    find . -d -empty -print
+}
+
+open_repo () {
+    url=$(git remote get-url origin | sed 's/git@github.com:/https:\/\/github.com\//')
     open $url
 }
 
@@ -55,7 +60,7 @@ gpip() {
 
 # Python Virtual Environments
 alias vm='python3 -m venv venv'
-alias vmake='python3 -m venv venv && source venv/bin/activate'
+alias vmake='python3 -m venv venv && source venv/bin/activate && pip install --upgrade pip'
 alias vs='source venv/bin/activate'
 alias vstart='source venv/bin/activate'
 alias vr='deactivate; source venv/bin/activate'
