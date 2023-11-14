@@ -87,7 +87,7 @@ export GEM_HOME="/opt/homebrew"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 export FZF_COMPLETION_TRIGGER='??'
 export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4'
-export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}' --height=100% --bind shift-up:preview-page-up,shift-down:preview-page-down"
 
 # rust cargo
 # . "$HOME/.cargo/env"
