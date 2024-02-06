@@ -7,16 +7,15 @@ alias cleandesk="defaults write com.apple.finder CreateDesktop false; killall Fi
 alias messydesk="defaults write com.apple.finder CreateDesktop true; killall Finder"
 
 # Edit/Reload zsh profile
-alias editprofile='vim ~/.dotfiles/.zshrc'
-alias editaliases='vim ~/.dotfiles/.aliases'
+alias editprofile='$EDITOR ~/.dotfiles/.zshrc'
+alias editaliases='$EDITOR ~/.dotfiles/.aliases'
 alias reload='exec zsh'
-alias editvim='vim ~/.vimrc'
 
 # Common Commands
-alias l='exa --icons --color=always'
-alias ls='exa -GFh --icons --color=always'
-alias ll='exa -l --icons --color=always'
-alias la='exa -la --icons --color=always'
+alias l='eza --icons --color=always'
+alias ls='eza -GFh --icons --color=always'
+alias ll='eza -l --icons --color=always'
+alias la='eza -la --icons --color=always'
 alias cat='bat'
 alias q='exit'
 alias c='clear'
@@ -38,17 +37,21 @@ alias mem='top -o rsize'
 alias sizeof='du -sh'
 
 # Scripts
-alias todo='python3 ~/Dropbox/dev/scripts/todo-grabber.py'
+alias fixme='~/Dropbox/dev/scripts/fixme.sh'
 alias tictactoe='python3 ~/Dropbox/dev/projects/games/tic-tac-toe/tic-tac-toe.py'
 alias expenses='/Users/jbd/Dropbox/dev/work/expense-report/run'
 alias market='python3 ~/Dropbox/dev/scripts/market.py'
-alias aoc='cd ~/Desktop/aoc22 && vs && python3 aoc.py'
+alias aoc='cd /Users/jbd/Dropbox/DEV/learning/challenges/aoc && venv/bin/python aoc.py'
+
+pman() {
+    man -t "${1}" 2>/dev/null | ps2pdf - - | open -f -a Preview.app
+}
 
 folder-destroyer () {
     find . -d -empty -print
 }
 
-open_repo () {
+openrepo () {
     url=$(git remote get-url origin | sed 's/git@github.com:/https:\/\/github.com\//')
     open $url
 }
@@ -76,8 +79,8 @@ alias projects='cd ~/Dropbox/DEV/projects'
 alias scripts='cd ~/Dropbox/DEV/scripts'
 alias notebooks='cd ~/Dropbox/DEV/jupyter'
 alias blog='cd ~/Dropbox/BLOG'
-alias notes='cd ~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Notes/'
+alias notes='cd ~/Dropbox/NOTES'
 
 # Do/Run/Build
 alias run='./run'
-alias escompile='bash /Users/jbd/Dropbox/DEV/projects/extend-script-compiler/escompile.sh'
+alias escompile='bash /Users/jbd/Dropbox/DEV/projects/escompile/escompile.sh'

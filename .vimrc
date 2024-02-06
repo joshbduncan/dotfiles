@@ -76,21 +76,12 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'itchyny/lightline.vim'
 Plug 'majutsushi/tagbar'
-Plug 'scrooloose/syntastic'
-" Plug 'vim-scripts/indentpython.vim'
-Plug 'Glench/Vim-Jinja2-Syntax'
 
 " i'm getting old
 Plug 'liuchengxu/vim-which-key'
 
 " distraction free editing for markdown
-Plug 'junegunn/goyo.vim'
-Plug 'amix/vim-zenroom2'
 Plug 'itspriddle/vim-marked'
-
-" ultisnips
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 
 " fzf vim integration
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -102,21 +93,14 @@ Plug 'tpope/vim-commentary'
 " git integration
 Plug 'tpope/vim-fugitive'
 
-Plug 'itspriddle/vim-marked'
-
 " code search
 Plug 'dyng/ctrlsf.vim'
-
-" Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 Plug 'markonm/traces.vim'
 
 " working with registers
 " Peekaboo extends " and @ in normal mode and <CTRL-R> in insert mode so you can see the contents of the registers.
 Plug 'junegunn/vim-peekaboo'
-
-" code completion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " code formatting
 Plug 'psf/black', { 'branch': 'stable' }
@@ -135,7 +119,6 @@ nnoremap <silent> <leader> :WhichKey '<Space>'<cr>
 nnoremap <esc><esc><esc> :nohl<cr>
 nnoremap <leader>t :term<cr>
 nnoremap <leader>nh :nohlsearch<cr>
-nnoremap <leader>mdw :Goyo<cr>
 nnoremap <leader>s :setlocal spell!<cr>
 
 " window movements
@@ -211,18 +194,6 @@ let g:NERDTreeAutoDeleteBuffer=1
 " enable tagbar
 nmap <C-t> :TagbarToggle<cr>
 
-" syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_python_exec = 'python3'
-let g:syntastic_python_checkers = ['python']
-let g:syntastic_html_checkers=['']
-
-" coc
-source ~/.dotfiles/.coc.vim
-
 " fzf
 nmap <C-p> :GFiles<cr>
 nmap <leader>gs :GFiles?<cr>
@@ -232,13 +203,6 @@ nmap <leader>fb :Buffers<cr>
 " PASS OPTIONAL FLAGS TO RG
 " ex. :Rg search-term -g '*.md'
 " command! -bang -nargs=* Rg call fzf#vim#grep("rg --column " . <q-args>, 1, <bang>0)
-
-"ultisnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsListSnippets="<c-tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
 
 " ctrlsf
 let g:ctrlsf_backend = '/usr/local/bin/rg'

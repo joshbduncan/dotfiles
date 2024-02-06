@@ -41,7 +41,7 @@ export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 # setopt globdots
 
 # setup vim as editor
-export EDITOR='vim'
+export EDITOR='nvim'
 # setup edit command in vim by pressing spacebar in command mode
 # autoload edit-command-line
 # zle -N edit-command-line
@@ -91,6 +91,7 @@ export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}' --height=100% --bin
 
 # rust cargo
 # . "$HOME/.cargo/env"
+export PATH=$PATH:/Users/jbd/.cargo/bin
 
 if [ -d "/usr/local/opt/ruby/bin" ]; then
   export PATH=/usr/local/opt/ruby/bin:$PATH
