@@ -11,9 +11,16 @@ alias editprofile='$EDITOR ~/.dotfiles/.zshrc'
 alias editaliases='$EDITOR ~/.dotfiles/.aliases'
 alias reload='exec zsh'
 
+# wget use custom cache file
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+
+# Edit Nvim Config
+alias envim='$EDITOR ~/.config/nvim/init.lua'
+alias nvimconf='$EDITOR ~/.config/nvim/'
+
 # Common Commands
 alias l='eza --icons --color=always'
-alias ls='eza -GFh --icons --color=always'
+alias ls='eza -Gh -F=auto --icons --color=always'
 alias ll='eza -l --icons --color=always'
 alias la='eza -la --icons --color=always'
 alias cat='bat'
@@ -37,21 +44,21 @@ alias mem='top -o rsize'
 alias sizeof='du -sh'
 
 # Scripts
-alias fixme='~/Dropbox/dev/scripts/fixme.sh'
-alias tictactoe='python3 ~/Dropbox/dev/projects/games/tic-tac-toe/tic-tac-toe.py'
+alias countchars='fold -w1 | grep "\S" | sort | uniq -c'
+alias empty-folders="fd --type=empty --type=directory"
+alias escompile='bash /Users/jbd/Dropbox/DEV/projects/escompile/escompile.sh'
 alias expenses='/Users/jbd/Dropbox/dev/work/expense-report/run'
-alias market='python3 ~/Dropbox/dev/scripts/market.py'
-alias aoc='cd /Users/jbd/Dropbox/DEV/learning/challenges/aoc && venv/bin/python aoc.py'
+alias fixme='~/Dropbox/dev/scripts/fixme.sh'
+alias fman="compgen -c | fzf | xargs man"
+alias photos-backup="rsync -av --progress /Volumes/SSD2021A/PHOTOS /Volumes/BRRR/PHOTO-BACKUP"
+alias nvim-old='~/Dropbox/DEV/scripts/nvim_fzf_old_files.sh'
+alias nvim-z='~/Dropbox/DEV/scripts/nvim_zoxide.sh'
 
 pman() {
-    man -t "${1}" 2>/dev/null | ps2pdf - - | open -f -a Preview.app
+    [[ $# -gt 0 ]] && man -t "${1}" 2>/dev/null | ps2pdf - - | open -f -a Preview.app
 }
 
-folder-destroyer () {
-    find . -d -empty -print
-}
-
-openrepo () {
+openrepo() {
     url=$(git remote get-url origin | sed 's/git@github.com:/https:\/\/github.com\//')
     open $url
 }
@@ -69,6 +76,13 @@ alias vstart='source venv/bin/activate'
 alias vr='deactivate; source venv/bin/activate'
 alias ve='deactivate'
 alias vend='deactivate'
+alias vdelete='deactivate && rm -rf venv'
+
+# Finder/Terminal Integrations
+function cdf() {
+  target=$(osascript -e 'tell application "Finder" to return POSIX path of (target of front Finder window as alias)')
+  cd "$target"
+}
 
 # Common Directories
 alias desktop='cd ~/Desktop'
@@ -83,4 +97,3 @@ alias notes='cd ~/Dropbox/NOTES'
 
 # Do/Run/Build
 alias run='./run'
-alias escompile='bash /Users/jbd/Dropbox/DEV/projects/escompile/escompile.sh'
