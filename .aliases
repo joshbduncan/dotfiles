@@ -1,3 +1,12 @@
+#!/usr/bin/env bash
+
+# Directories
+
+alias l='eza --icons --color=always'
+alias ls='l'
+alias ll='eza -lh --icons --color=always'
+alias la='eza -lha --icons --color=always'
+
 # Show/Hide Finder Files
 alias show='defaults write com.apple.finder ShowAllFiles TRUE'
 alias hide='defaults write com.apple.finder ShowAllFiles FALSE'
@@ -9,7 +18,7 @@ alias messydesk="defaults write com.apple.finder CreateDesktop true; killall Fin
 # Edit/Reload zsh profile
 alias editprofile='$EDITOR ~/.dotfiles/.zshrc'
 alias editaliases='$EDITOR ~/.dotfiles/.aliases'
-alias reload='exec zsh'
+alias reload="source ~/.zshrc"
 
 # wget use custom cache file
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
@@ -19,10 +28,6 @@ alias envim='$EDITOR ~/.config/nvim/init.lua'
 alias nvimconf='$EDITOR ~/.config/nvim/'
 
 # Common Commands
-alias l='eza --icons --color=always'
-alias ls='eza -Gh -F=auto --icons --color=always'
-alias ll='eza -l --icons --color=always'
-alias la='eza -la --icons --color=always'
 alias cat='bat'
 alias q='exit'
 alias c='clear'
@@ -56,12 +61,12 @@ alias nvim-old='~/Dropbox/DEV/scripts/nvim_fzf_old_files.sh'
 alias nvim-z='~/Dropbox/DEV/scripts/nvim_zoxide.sh'
 
 pman() {
-    [[ $# -gt 0 ]] && man -t "${1}" 2>/dev/null | ps2pdf - - | open -f -a Preview.app
+  [[ $# -gt 0 ]] && man -t "${1}" 2>/dev/null | ps2pdf - - | open -f -a Preview.app
 }
 
 openrepo() {
-    url=$(git remote get-url origin | sed 's/git@github.com:/https:\/\/github.com\//')
-    open $url
+  url=$(git remote get-url origin | sed 's/git@github.com:/https:\/\/github.com\//')
+  open $url
 }
 
 alias pip="/Library/Frameworks/Python.framework/Versions/3.13/bin/pip3"
