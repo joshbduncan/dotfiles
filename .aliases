@@ -42,6 +42,7 @@ alias ip='curl icanhazip.com'
 alias cpu='top -o cpu'
 alias mem='top -o rsize'
 alias sizeof='du -sh'
+alias path='echo $PATH | tr ":" "\n"'
 
 # Scripts
 alias countchars='fold -w1 | grep "\S" | sort | uniq -c'
@@ -62,6 +63,8 @@ openrepo() {
     url=$(git remote get-url origin | sed 's/git@github.com:/https:\/\/github.com\//')
     open $url
 }
+
+alias pip="/Library/Frameworks/Python.framework/Versions/3.13/bin/pip3"
 
 # Python pip Global Install
 gpip() {

@@ -39,7 +39,7 @@ plugins=(
     pip
     vi-mode
     virtualenv
-    # z
+    z
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
@@ -89,17 +89,14 @@ bindkey "^[3;5~" delete-char
 # change bat theme
 export BAT_THEME="Dracula"
 
-# heroku autocomplete setup
-HEROKU_AC_ZSH_SETUP_PATH=/Users/jbd/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
-
-# Created by `pipx` on 2022-02-07 16:58:45
-export PATH="$PATH:/Users/jbd/.local/bin"
-
 # add brew ruby path for gem installs
 export GEM_HOME="/opt/homebrew"
 
+# NOTE: z
+# . /opt/homebrew/etc/profile.d/z.sh
+
 # NOTE: zoxide
-eval "$(zoxide init zsh)"
+# eval "$(zoxide init zsh)"
 
 # NOTE: fzf
 source <(fzf --zsh)

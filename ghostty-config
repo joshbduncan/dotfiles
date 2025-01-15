@@ -1,0 +1,29 @@
+# Comments start with a `#` and are only valid on their own line.
+# Blank lines are ignored!
+
+theme = Dracula
+
+# font-family = JetBrainsMono NFM Bold
+font-family = TX-02-Trial Regular
+font-size = 18
+
+confirm-close-surface = true
+cursor-style = block
+# link = true
+link-url = true
+mouse-hide-while-typing = true
+shell-integration-features = no-cursor
+window-save-state = always
+
+window-padding-color = extend
+window-padding-x = 10
+window-padding-y = 4
+
+# keybinds
+keybind = super+shift+l=goto_split:right
+keybind = super+shift+h=goto_split:left
+keybind = super+shift+k=goto_split:top
+keybind = super+shift+j=goto_split:bottom
+
+# keybind = super+shift+h=previous_tab
+# keybind = super+shift+l=next_tab
