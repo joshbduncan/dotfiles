@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+
+# Common Directories
+alias desktop='cd $HOME/Desktop'
+alias blog='cd $BLOG'
+alias dev='cd $DEV'
+alias dotfiles='cd $DOTFILES'
+alias dropbox='cd $DROPBOX'
+alias notes='cd $NOTES'
+alias repos='cd $REPOS'
+alias scripts='cd $SCRIPTS'
+
+# Jumping Around
+alias l='eza --icons --color=always'
+alias ls='l'
+alias ll='eza -lh --icons --color=always'
+alias la='eza -lha --icons --color=always'
+
+# Edit ZSH/NVIM Config
+alias editprofile='$EDITOR $DOTFILES/.zprofile'
+alias editrc='$EDITOR $DOTFILES/.zshrc'
+alias editaliases='$EDITOR $DOTFILES/.aliases'
+alias reload='source ~/.zshrc'
+alias nvimconf='$EDITOR $NVIMCONFIG'
+
+# wget use custom cache file
+alias wget=wget --hsts-file='$XDG_DATA_HOME/wget-hsts'
+
+# Common Commands
+alias cat='bat'
+alias q='exit'
+alias c='clear'
+alias h='history'
+
+# git
+alias gs='git status'
+alias gopen='open "$(git remote get-url origin)"'
+alias gwhoops='git reset --soft HEAD~1'
+
+# Info Commands
+alias diskspace='df -h /Volumes/Macintosh\ HD'
+alias filecount='find . -type f | wc -l'
+alias myip='ifconfig | grep "inet "'
+alias ip='curl icanhazip.com'
+alias cpu='top -o cpu'
+alias mem='top -o rsize'
+alias sizeof='du -sh'
+alias path='echo $PATH | tr ":" "\n"'
+
+# quickies
+alias countchars='fold -w1 | grep "\S" | sed "s/.*/'\''&'\''/" | sort | uniq -c'
+alias rm-ds='find . -type f -name .DS_Store -delete'
+alias rm-empty-folders='find . -type d -empty -delete'
+alias fman='compgen -c | fzf | xargs man'
+alias photos-backup='rsync -av --progress /Volumes/SSD2021A/PHOTOS /Volumes/BRRR/PHOTO-BACKUP'
+alias nvim-old='~/Dropbox/DEV/scripts/nvim_fzf_old_files.sh'
+alias nvim-z='~/Dropbox/DEV/scripts/nvim_zoxide.sh'
+
+# Python
+alias python='python3'
+alias pip='pip3'
+
+# Python pip Global Install
+gpip() {
+  PIP_REQUIRE_VIRTUALENV=false pip "$@"
+}
+
+# Python Virtual Environments
+alias vmake='python3 -m venv venv && source venv/bin/activate && pip install --upgrade pip'
+alias vs='[ -d "venv" ] && source venv/bin/activate || source .venv/bin/activate'
+alias ve='deactivate'
+alias vdel='deactivate && rm -rf venv'

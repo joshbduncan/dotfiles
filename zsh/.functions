@@ -1,0 +1,171 @@
+#!/usr/bin/env bash
+
+this_file="${BASH_SOURCE:-$0}"
+
+# Show names of custom functions defined in this file
+function funcs-help() {
+    grep -E --only-matching "^(function\s.*\(\))" "$this_file" | sort
+}
+
+# Show command history stats
+function history-stats() {
+    history 0 | awk '{print $2}' | sort | uniq -c | sort -n -r | head
+}
+
+# Get a little shell command help
+function cheat() {
+    curl cheat.sh/"$1"
+}
+
+# Calculate provided expression
+function calc() {
+    bc -l <<<"$@"
+}
+
+# Generate a shortlink for a URL
+# arg1: Full URL to shorten
+function tiny() {
+    local URL=${1:?}
+    curl -s -w "\n" "http://tinyurl.com/api-create.php?url=$URL"
+}
+
+# ~~~~~~~~~~ Python ~~~~~~~~~~
+
+# Start the python simple http server
+# arg1:
+function pyserve() {
+    local -r PORT=${1:-8888}
+    python -m http.server "$PORT"
+}
+
+# ~~~~~~~~~~ Mac ~~~~~~~~~~
+
+# Show/hide hidden files in the Finder
+alias finder-showfiles="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias finder-hidefiles="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# Show/Hide Desktop Icons
+alias finder-cleandesk="defaults write com.apple.finder CreateDesktop false; killall Finder"
+alias finder-messydesk="defaults write com.apple.finder CreateDesktop true; killall Finder"
+
+# open passed dirs in Finder or cwd if no args
+function finder-open {
+    if ((!$#)); then
+        open $PWD
+    else
+        open "$@"
+    fi
+}
+
+# get path of front Finder window
+function finder-window() {
+    osascript 2>/dev/null <<EOF
+    tell application "Finder"
+      return POSIX path of (insertion location as alias)
+    end tell
+EOF
+}
+
+# cd to the front Finder window
+function finder-cd() {
+    cd "$(finder-window)" || exit
+}
+
+# get paths of front Finder window selection
+function finder-selection() {
+    osascript 2>/dev/null <<EOF
+    set paths to ""
+    tell application "Finder" to set the_selection to selection
+    set item_count to count the_selection
+    repeat with item_index from 1 to count the_selection
+      if item_index is less than item_count then set the_delimiter to "\n"
+      if item_index is item_count then set the_delimiter to ""
+      set paths to paths & ((item item_index of the_selection as alias)'s POSIX path) & the_delimiter
+    end repeat
+EOF
+}
+
+# open file with Quick Look
+function finder-ql() {
+    (($# > 0)) && qlmanage -p "$*" &>/dev/null &
+}
+
+# open man page in Preview
+function pman() {
+    [[ $# -gt 0 ]] && man -t "${1}" 2>/dev/null | ps2pdf - - | open -f -a Preview.app
+}
+
+# ~~~~~~~~~~ Image Manipulation ~~~~~~~~~~
+
+# Get the width x height of an image file
+# arg1: image file
+function img-size() {
+    for file in "$@"; do
+        # shellcheck disable=SC2155
+        local width=$(identify -format "%w" "$file") >/dev/null
+        # shellcheck disable=SC2155
+        local height=$(identify -format "%h" "$file") >/dev/null
+
+        echo -e "Size of $file: $width*$height"
+    done
+}
+
+# Resize an image
+# arg1: image file
+# arg2: resize width
+# arg3: modify in place (default: false)
+# Example: imgresize cool_image.jpg 1200 true
+function img-resize() {
+    local filename=${1%\.*}
+    local extension="${1##*.}"
+    local separator="_"
+    if [ -n "$3" ]; then
+        local finalName="$filename.$extension"
+    else
+        local finalName="$filename$separator$2.$extension"
+    fi
+    magick "$1" -quality 100 -resize "$2" "$finalName"
+    echo "$finalName resized to $2"
+}
+
+# Resize all images
+# arg1: extension of images to resize
+# arg2: resize width
+# arg3: modify in place (default: false)
+# Example: imgresizeall jpg 1000 true
+function img-resize-all() {
+    for f in *."${1}"; do
+        if [ -n "$3" ]; then
+            imgresize "$f" "${2}" t
+        else
+            imgresize "$f" "${2}"
+        fi
+    done
+}
+
+# Convert image(s) to jpg
+# args: image file(s) to convert
+function img-2-jpg() {
+    for file in "$@"; do
+        local filename=${file%\.*}
+        magick -quality 100 "$file" "${filename}.jpg"
+    done
+}
+
+# Convert image(s) to png
+# args: image file(s) to convert
+function img-2-png() {
+    for file in "$@"; do
+        local filename=${file%\.*}
+        magick -quality 100 "$file" "${filename}.png"
+    done
+}
+
+# Convert image(s) to webp
+# args: image file(s) to convert
+function img-2-webp() {
+    for file in "$@"; do
+        local filename=${file%\.*}
+        cwebp -q 100 "$file" -o "$(basename "${filename}").webp"
+    done
+}

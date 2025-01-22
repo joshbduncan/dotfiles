@@ -1,0 +1,12 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: local
+    hooks:
+      - id: brew-packages-list-update
+        name: update brew packages list 
+        entry: bash -c 'brew list -1 > brew.txt'
+        language: system
+        types: [bash]
+        always_run: true
+        verbose: true

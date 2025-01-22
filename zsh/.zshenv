@@ -1,9 +1,9 @@
 # ~~~~~~~~~~ XDG ~~~~~~~~~~
 
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_DATA_HOME="${HOME}/.local/share"
+export XDG_CACHE_HOME="${HOME}/.cache"
+export XDG_STATE_HOME="${HOME}/.local/state"
 
 # ~~~~~~~~~~ Editor ~~~~~~~~~~
 
@@ -17,27 +17,26 @@ export VISUAL="nvim"
 
 # ~~~~~~~~~~ History ~~~~~~~~~~
 
-# export HISTFILE="$XDG_STATE_HOME/.zsh_history"
 export HISTSIZE=100000
 export SAVEHIST=100000
 
 # ~~~~~~~~~~ Directories ~~~~~~~~~~
 
 # export ZSH="$XDG_CONFIG_HOME/zsh"
-export NVIMCONFIG="$XDG_CONFIG_HOME/nvim"
-export DROPBOX="$HOME/Dropbox"
-export NOTES="$DROPBOX/notes"
-export DEV="$DROPBOX/dev"
-export REPOS="$DEV/repos"
-export DOTFILES="$REPOS/dotfiles"
-export SCRIPTS="$REPOS/scripts"
+export DROPBOX="${HOME}/Dropbox"
+export BLOG="${DROPBOX}/blog"
+export DEV="${DROPBOX}/dev"
+export REPOS="${DEV}/repos"
+export DOTFILES="${REPOS}/dotfiles"
+export SCRIPTS="${REPOS}/scripts"
+export NOTES="${DROPBOX}/notes"
+export NVIMCONFIG="${XDG_CONFIG_HOME}/nvim"
 
 # ~~~~~~~~~~ Cleanup $HOME ~~~~~~~~~~
-# export ZSH_COMPDUMP="$ZSH/.zcompdump"
-export SQLITE_HISTORY="$XDG_CACHE_HOME/sqlite_history"
-export _Z_DATA="$XDG_DATA_HOME/z"
-export CARGO_HOME="$XDG_DATA_HOME/cargo"
-export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
+export SQLITE_HISTORY="${XDG_CACHE_HOME}/sqlite_history"
+export _Z_DATA="${XDG_DATA_HOME}/z"
+export CARGO_HOME="${XDG_DATA_HOME}/cargo"
+export NODE_REPL_HISTORY="${XDG_DATA_HOME}/node_repl_history"
 export GEM_HOME="/opt/homebrew" # add brew ruby path for gem installs
 
 # ~~~~~~~~~~ Man Pages ~~~~~~~~~~

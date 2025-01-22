@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
-export ZSH="$HOME/.config/zsh"
+export ZSH="${HOME}/.config/zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -17,7 +17,6 @@ ZSH_THEME="dracula"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
-    pip
     vi-mode
     virtualenv
     z
@@ -25,16 +24,17 @@ plugins=(
     zsh-syntax-highlighting
 )
 
-source $ZSH/oh-my-zsh.sh
+source "${ZSH}/oh-my-zsh.sh"
 
 # User configuration
 
 # run `alias` for full list of active aliases
-source "$DOTFILES/.aliases"
+source "${HOME}/.aliases"
+source "${HOME}/.functions"
 
 # fzf git integration
 if [ $(command -v "fzf") ]; then
-    source $DOTFILES/zsh/scripts/fzf-git.sh
+    source "${XDG_CONFIG_HOME}/fzf-git.sh/fzf-git.sh"
     source <(fzf --zsh)
 fi
 
@@ -52,8 +52,3 @@ VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 
 # fix vi mode
 export KEYTIMEOUT=40
-
-# edit current command line with vim (vim-mode, then CTRL-v)
-autoload -Uz edit-command-line
-zle -N edit-command-line
-bindkey -M vicmd '^v' edit-command-line
