@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 paths=(
-    "${DOTFILES}/scripts/fixme.sh"
-    "${DOTFILES}/scripts/fzf-old-nvim-files.sh"
-    "${DOTFILES}/scripts/fzf-search-2-editor.sh"
+    "${SCRIPTS}/bash/fixme.sh"
+    # "${DOTFILES}/scripts/fzf-old-nvim-files.sh"
+    # "${DOTFILES}/scripts/fzf-search-2-editor.sh"
     "${REPOS}/escompile/escompile.sh"
 )
 

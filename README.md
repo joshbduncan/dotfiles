@@ -2,7 +2,7 @@
 
 This repository contains scripts and configuration files to set up my development environment for macOS.
 
-## Getting Started
+## Getting started
 
 1. Clone the repo and navigate to the clone location.
 
@@ -11,7 +11,7 @@ git clone https://github.com/joshbduncan/dotfiles.git
 cd ~/location/of/my/dotfiles
 ```
 
-## Setup ZSH and Terminal
+## Setup zsh and terminal
 
 1. Run the zsh setup script:
 
@@ -28,18 +28,18 @@ cd ~/location/of/my/dotfiles
 mkdir $XDG_CONFIG_HOME/ghostty
 ln -sf $DOTFILES/ghostty/config $XDG_CONFIG_HOME/ghostty
 ```
-## Setup Vim and Neovim
+## Setup vim and nvim
 
 ```sh
 ln -sf $DOTFILES/vim/.vimrc $HOME
 ln -sf $DOTFILES/nvim $XDG_CONFIG_HOME/nvim
 ```
-## Links Scripts to BIN Directory
+## Link scripts to bin directory
 
 ```sh
 ./scripts/install-scripts.sh
 ```
-## Miscellaneous Items
+## Miscellaneous
 
 ### Clone fzf-git
 

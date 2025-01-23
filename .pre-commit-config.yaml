@@ -4,8 +4,8 @@ repos:
   - repo: local
     hooks:
       - id: brew-packages-list-update
-        name: update brew packages list 
-        entry: bash -c 'brew list -1 > brew.txt'
+        name: update brew packages list
+        entry: bash -c 'brew list -1 > brew/brew.txt'
         language: system
         types: [bash]
         always_run: true
