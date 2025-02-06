@@ -2,8 +2,6 @@
 
 paths=(
     "${SCRIPTS}/bash/fixme.sh"
-    # "${DOTFILES}/scripts/fzf-old-nvim-files.sh"
-    # "${DOTFILES}/scripts/fzf-search-2-editor.sh"
     "${REPOS}/escompile/escompile.sh"
 )
 

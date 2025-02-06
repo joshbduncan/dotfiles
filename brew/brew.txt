@@ -76,6 +76,7 @@ libdeflate
 libevent
 libgit2
 libgit2@1.7
+libgit2@1.8
 libheif
 libidn
 libidn2
@@ -122,6 +123,7 @@ mpfr
 msgpack
 ncurses
 neovim
+net-snmp
 node
 oniguruma
 openblas

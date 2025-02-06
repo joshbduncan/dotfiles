@@ -39,6 +39,10 @@ ln -sf $DOTFILES/nvim $XDG_CONFIG_HOME/nvim
 ```sh
 ./scripts/install-scripts.sh
 ```
+## Mac Settings
+
+[Resource](https://gist.github.com/devnoname120/4767a0aa18879217170fd0c68809fc24?permalink_comment_id=5410539)
+
 ## Miscellaneous
 
 ### Clone fzf-git

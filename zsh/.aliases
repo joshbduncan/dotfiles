@@ -2,6 +2,7 @@
 
 # Common Directories
 alias desktop='cd $HOME/Desktop'
+alias downloads='cd $HOME/Downloads'
 alias blog='cd $BLOG'
 alias dev='cd $DEV'
 alias dotfiles='cd $DOTFILES'

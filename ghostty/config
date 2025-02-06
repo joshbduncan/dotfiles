@@ -12,6 +12,7 @@ cursor-style = block
 # link = true
 link-url = true
 mouse-hide-while-typing = true
+mouse-scroll-multiplier = .5
 shell-integration-features = no-cursor
 window-save-state = always
 
@@ -27,3 +28,5 @@ keybind = super+shift+j=goto_split:bottom
 
 # keybind = super+shift+h=previous_tab
 # keybind = super+shift+l=next_tab
+
+keybind = global:cmd+shift+\=toggle_quick_terminal
