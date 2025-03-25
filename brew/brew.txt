@@ -2,7 +2,6 @@ aom
 apr
 apr-util
 argon2
-aspell
 autoconf
 bat
 berkeley-db@5
@@ -42,6 +41,7 @@ gh
 ghostscript
 giflib
 git
+git-lfs
 glib
 glog
 glow
@@ -166,6 +166,7 @@ tesseract
 tidy-html5
 tlrc
 tmux
+trash
 tree
 tree-sitter
 typescript
@@ -190,6 +191,7 @@ zsh
 zstd
 1password-cli
 alfred
+betterdisplay
 db-browser-for-sqlite
 dracula-insomnia
 iterm2

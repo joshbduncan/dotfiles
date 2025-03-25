@@ -24,9 +24,9 @@ export SAVEHIST=100000
 
 # export ZSH="$XDG_CONFIG_HOME/zsh"
 export DROPBOX="${HOME}/Dropbox"
-export BLOG="${DROPBOX}/blog"
 export DEV="${DROPBOX}/dev"
 export REPOS="${DEV}/repos"
+export BLOG="${REPOS}/blog"
 export DOTFILES="${REPOS}/dotfiles"
 export SCRIPTS="${REPOS}/scripts"
 export NOTES="${DROPBOX}/notes"

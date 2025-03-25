@@ -2,8 +2,8 @@ return {
 	{
 		"echasnovski/mini.nvim",
 		config = function()
-			local statusline = require("mini.statusline")
-			statusline.setup({ use_icons = true })
+			require("mini.statusline").setup({ use_icons = true })
+
 			require("mini.files").setup()
 
 			local notify = require("mini.notify")
@@ -57,5 +57,8 @@ return {
 				end,
 			})
 		end,
+		keys = {
+			{ "<C-\\>", ":lua MiniFiles.open()<CR>", desc = "Open MiniFiles" }
+		},
 	},
 }

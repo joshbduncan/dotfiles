@@ -28,9 +28,6 @@ map("n", "<leader>bd", "<cmd>lua MiniBufremove.delete()<cr>", { desc = "Delete B
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
--- open MiniFiles
--- map("n", "<C-\\>", ":lua MiniFiles.open()<CR>")
-map("n", "-", "<cmd>Oil --float<cr>", { desc = "Explore Parent Directory" })
-
 -- ESRunner
 map({ "n", "v" }, "<leader>er", "<cmd>ESRunner run<CR>", { desc = "[E]SRunner [R]un" })
+

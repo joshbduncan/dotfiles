@@ -5,6 +5,20 @@ function fzf-man-pages() {
     compgen -c | fzf | xargs man
 }
 
+
+# Show notes in fzf picker and open selected note(s) in nvim
+function snotes() {
+    local notes
+    # notes=$(find "$NOTES" -type f \( -iname '*.md' -o -iname '*.txt' \))
+    
+    # use fzf to filter files
+    notes=($(find "$NOTES" -type f \( -iname '*.md' -o -iname '*.txt' \) | fzf --multi --preview 'bat -n --color=always {}'))
+
+    # open file in nvim
+    [[ ${#notes[@]} -gt 0 ]] && nvim "${notes[@]}"
+}
+
+
 # Show nvim oldfiles in fzf picker and open selected file(s) in nvim
 # arg1: image file
 

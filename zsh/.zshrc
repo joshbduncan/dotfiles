@@ -52,3 +52,5 @@ VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 
 # fix vi mode
 export KEYTIMEOUT=40
+
+. "$HOME/.local/share/../bin/env"

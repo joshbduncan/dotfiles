@@ -26,6 +26,11 @@ function history-stats() {
     history 0 | awk '{print $2}' | sort | uniq -c | sort -n -r | head
 }
 
+# open man page in Preview
+function pman() {
+    [[ $# -gt 0 ]] && man -t "${1}" 2>/dev/null | ps2pdf - - | open -f -a Preview.app
+}
+
 # Get a little shell command help
 function cheat() {
     curl cheat.sh/"$1"
@@ -58,6 +63,12 @@ function rm-ds() {
 function rm-empty-folders() {
     echo "removing empty folders recursively..."
     find . -type d -empty -delete
+}
+
+# Backup photos to BRRR
+function things-backup() {
+    echo "backing up things database"
+    cp -R  ~/Library/Group\ Containers/JLMPQHK86H.com.culturedcode.ThingsMac/ThingsData-6FDE0 ~/Dropbox/backup/ThingsData-65DE0.bak
 }
 
 # Backup photos to BRRR

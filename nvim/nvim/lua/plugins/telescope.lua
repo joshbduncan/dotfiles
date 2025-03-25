@@ -20,6 +20,7 @@ return {
             require("telescope").load_extension("fzf")
             require("telescope").load_extension("ui-select")
 
+
             local builtin = require("telescope.builtin")
 
             vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
@@ -55,8 +56,6 @@ return {
                     cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy"),
                 })
             end, { desc = "[S]earch Neovim [P]lugin Files" })
-
-            require("config.telescope.multigrep").setup()
         end,
     },
 }
