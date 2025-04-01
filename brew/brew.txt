@@ -196,6 +196,7 @@ db-browser-for-sqlite
 dracula-insomnia
 iterm2
 jordanbaird-ice
+leader-key
 lookaway
 ngrok
 pearcleaner

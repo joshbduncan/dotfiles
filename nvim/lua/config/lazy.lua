@@ -36,4 +36,8 @@ require("lazy").setup({
 	checker = { enabled = true },
 })
 
+require("config.autocmds")
+require("config.funcs")
+require("config.globals")
 require("config.keymaps")
+require("config.macros")
