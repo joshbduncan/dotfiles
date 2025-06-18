@@ -18,6 +18,29 @@ function snotes() {
     [[ ${#notes[@]} -gt 0 ]] && nvim "${notes[@]}"
 }
 
+# Explore latest git diff in fzf
+#   1. fzf  | command-line fuzzy finder
+function fzf-gitdiff() {
+    commit=${1:-HEAD}
+    git show --stat=120 --format="" "$commit" | \
+        grep -E '^\s*\S+.*\|' | \
+        fzf --ansi \
+        --disabled \
+        --bind 'j:down,k:up,q:abort' \
+        --preview="echo {} | sed 's/|.*//' | xargs -I% git show --color=always $commit -- %" \
+        --preview-window=right:60%
+}
+
+# Play with JSON data using jq and fzf
+# arg1: json file
+
+# Dependencies:
+#   1. fzf  | command-line fuzzy finder
+function fzf-jq-playground() {
+    printf '' | fzf --print-query \
+        --preview "jq -C {q} '$1' 2>&1" \
+        --preview-window=up:80%
+}
 
 # Show nvim oldfiles in fzf picker and open selected file(s) in nvim
 # arg1: image file
