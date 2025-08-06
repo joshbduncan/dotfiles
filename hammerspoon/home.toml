@@ -1,0 +1,40 @@
+# settings
+leader_key = "f18"
+leader_key_mods = ""
+auto_reload = true
+toast_on_reload = true
+show_ui = true
+key_maps_per_line = 1
+
+a = "https://apple.com"
+b = "https://britannica.com"
+c = "https://chatgpt.com"
+d = "https://dropbox.com"
+e = "https://espn.com"
+f = "https://facebook.com"
+g = "https://google.com"
+h = "function:hi"
+
+[t]
+label = "[things]"
+i = ["things:///show?query=inbox", "inbox"]
+l = ["things:///show?query=logbook", "logbook"]
+t = ["things:///show?query=today", "today"]
+o = ["Things3", "Things"]
+p = ["things:///show?id=HUpeqNzWQ4HtsNq7v55H1f", "projects"]
+
+[u]
+label = "[urls]"
+c = [
+    "alfred://runtrigger/com.alfredapp.chickenpoop/chickenpoop/?argument=test",
+    "chicken poop",
+]
+
+[u.w]
+label = "[work]"
+b = ["https://belmontrx.com", "Belmont Pharmacy"]
+c = ["https://carolinaapothecary.com", "Carolina Apothecary"]
+r = ["https://rxcaremeds.com", "RxCARE"]
+
+[z]
+z = "hs:hs.alert('Hello, world!')"

@@ -1,6 +1,6 @@
-P = function(obj, note)
-	if note ~= nil then
-		print(string.format("** INSPECTING %s **", note))
-	end
-	print(vim.inspect(obj))
-end
+-- set space as leader key
+-- NOTE: must happen before any plugins
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
+vim.g.have_nerd_font = true

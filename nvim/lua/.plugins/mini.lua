@@ -4,13 +4,11 @@ return {
         config = function()
             require("mini.statusline").setup({ use_icons = true })
 
-            require("mini.files").setup()
-            vim.keymap.set("n", "<C-\\>", ":lua MiniFiles.open()<CR>", { desc = "Open MiniFiles" })
+            -- require("mini.files").setup()
 
             local notify = require("mini.notify")
             notify.setup({})
             vim.notify = notify.make_notify()
-            vim.keymap.set("n", "<leader>nh", ":lua MiniNotify.show_history()<CR>", { desc = "[N]otification [H]istory" })
 
             require("mini.move").setup()
 
@@ -41,13 +39,11 @@ return {
 
             require("mini.bufremove").setup()
 
-            require("mini.move").setup()
-
             -- local pick = require('mini.pick')
             -- pick.setup()
             -- vim.ui.select = pick.ui_select
 
-            -- require("mini.test").setup({})
+            require("mini.test").setup({})
 
             require("mini.starter").setup({
                 header = function()

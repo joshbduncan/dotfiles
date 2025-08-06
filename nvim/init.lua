@@ -1,1 +1,10 @@
+require("config.globals")
 require("config.lazy")
+require("config.options")
+require("config.autocmd")
+require("config.lsp")
+require("config.keymaps")
+require("config.funcs")
+require("config.macros")
+
+require("luasnip.loaders.from_vscode").lazy_load()
