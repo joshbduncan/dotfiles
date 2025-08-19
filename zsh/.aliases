@@ -4,7 +4,7 @@
 alias desktop='cd $HOME/Desktop'
 alias downloads='cd $HOME/Downloads'
 alias blog='cd $BLOG'
-alias dev='cd $DEV'
+alias code='cd $CODE'
 alias dotfiles='cd $DOTFILES'
 alias dropbox='cd $DROPBOX'
 alias notes='cd $NOTES'

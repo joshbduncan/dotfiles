@@ -57,29 +57,29 @@ spoon.Hammerflow.registerFunctions(
 -- end)
 
 -- Adobe Command Palette Keybindings
-hs.hotkey.bind({ "cmd", "shift" }, "p", function()
-	local apps = {
-		{
-			name = "Adobe Illustrator 2025",
-			menu_path = { "File", "Scripts", "AiCommandPalette" }
-		},
-		{
-			name = "Adobe Photoshop 2025",
-			menu_path = { "Plugins", "Ps Command Palette", "Launch Ps Command Palette" }
-		}
-	}
-
-	for _, app in ipairs(apps) do
-		local application = hs.appfinder.appFromName(app.name)
-		if application and application:isFrontmost() then
-			if application:findMenuItem(app.menu_path) == nil then
-				hs.notify.show(app.name, table.concat(app.menu_path, " > "), "Menu item not found!")
-				return
-			end
-			application:selectMenuItem(app.menu_path)
-		end
-	end
-end)
+-- hs.hotkey.bind({ "cmd", "shift" }, "p", function()
+-- 	local apps = {
+-- 		{
+-- 			name = "Adobe Illustrator 2025",
+-- 			menu_path = { "File", "Scripts", "AiCommandPalette" }
+-- 		},
+-- 		{
+-- 			name = "Adobe Photoshop 2025",
+-- 			menu_path = { "Plugins", "Ps Command Palette", "Launch Ps Command Palette" }
+-- 		}
+-- 	}
+--
+-- 	for _, app in ipairs(apps) do
+-- 		local application = hs.appfinder.appFromName(app.name)
+-- 		if application and application:isFrontmost() then
+-- 			if application:findMenuItem(app.menu_path) == nil then
+-- 				hs.notify.show(app.name, table.concat(app.menu_path, " > "), "Menu item not found!")
+-- 				return
+-- 			end
+-- 			application:selectMenuItem(app.menu_path)
+-- 		end
+-- 	end
+-- end)
 
 hs.hotkey.bind({ "cmd", "alt", "ctrl" }, ",", function()
 	hs.messages.iMessage(3366130496, "the cat and the hat...")

@@ -6,6 +6,7 @@ theme = Dracula
 # font-family = JetBrainsMono NFM Bold
 font-family = TX-02-Trial Regular
 font-size = 18
+font-feature = "-calt, -liga, -dlig"
 
 confirm-close-surface = true
 cursor-style = block

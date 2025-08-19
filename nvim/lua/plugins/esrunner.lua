@@ -2,7 +2,7 @@ return {
     {
         "joshbduncan/esrunner.nvim",
         event = "VeryLazy",
-        dir = "~/Dropbox/dev/repos/esrunner.nvim/",
+        dir = "~/Dropbox/code/esrunner.nvim/",
         dev = true,
         opts = {
             defaults = {
