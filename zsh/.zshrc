@@ -28,6 +28,10 @@ source "${ZSH}/oh-my-zsh.sh"
 
 # User configuration
 
+# add 1password cli completion
+# https://developer.1password.com/docs/cli/get-started/?utm_medium=organic&utm_source=oph&utm_campaign=macos
+eval "$(op completion zsh)"; compdef _op op
+
 # run `alias` for full list of active aliases
 source "${HOME}/.aliases"
 source "${HOME}/.functions"
