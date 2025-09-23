@@ -9,14 +9,14 @@ hs.loadSpoon("EmmyLua")
 hs.loadSpoon("Hammerflow")
 spoon.Hammerflow.registerFormat({
 	atScreenEdge = 2,
-	fillColor = { alpha = .875, hex = "282b36" },
+	fillColor = { alpha = 0.875, hex = "282b36" },
 	padding = 18,
 	radius = 12,
-	strokeColor = { alpha = .875, hex = "f1fa8b" },
+	strokeColor = { alpha = 0.875, hex = "f1fa8b" },
 	textColor = { alpha = 1, hex = "bd93f9" },
 	textStyle = {
 		paragraphStyle = { lineSpacing = 6 },
-		shadow = { offset = { h = -1, w = 1 }, blurRadius = 10, color = { alpha = .50, white = 0 } }
+		shadow = { offset = { h = -1, w = 1 }, blurRadius = 10, color = { alpha = 0.50, white = 0 } },
 	},
 	strokeWidth = 6,
 	textFont = "JetBrainsMono NFM Bold",
@@ -41,10 +41,17 @@ end
 -- called from your toml config using the
 -- function: prefix, e.g.
 --   h = "function:hi"
-spoon.Hammerflow.registerFunctions(
-	{ ["hi"] = function() hs.alert("hi") end }
-)
+spoon.Hammerflow.registerFunctions({
+	["hi"] = function()
+		hs.alert("hi")
+	end,
+})
 
+spoon.Hammerflow.registerFunctions({
+	["ho"] = function()
+		hs.alert("ho")
+	end,
+})
 -- hs.alert.defaultStyle.atScreenEdge = 2
 -- hs.alert.defaultStyle.textSize = 21
 -- hs.alert.defaultStyle.padding = 21
@@ -82,7 +89,7 @@ spoon.Hammerflow.registerFunctions(
 -- end)
 
 hs.hotkey.bind({ "cmd", "alt", "ctrl" }, ",", function()
-	hs.messages.iMessage(3366130496, "the cat and the hat...")
+	hs.messages.iMessage(3366130496, "the cat and the rat...")
 end)
 
 -- Quick Messages
@@ -143,14 +150,27 @@ hs.urlevent.bind("myEvent", function(eventName, params)
 	end
 end)
 
-
 -- Launch/focus specific apps with one keystroke.
 -- Note: to get {^1,^2,^3} to work, you might need to change some conflicting
 -- Mission Control keyboard shortcuts in SysPrefs > Keyboard > Shortcuts
-hs.hotkey.bind({ "ctrl" }, "1", function() hs.application.launchOrFocus("Safari") end)
-hs.hotkey.bind({ "ctrl" }, "2", function() hs.application.launchOrFocus("Finder") end)
-hs.hotkey.bind({ "ctrl" }, "3", function() hs.application.launchOrFocus("Things3") end)
-hs.hotkey.bind({ "ctrl" }, "4", function() hs.application.launchOrFocus("Mimestream") end)
-hs.hotkey.bind({ "ctrl" }, "5", function() hs.application.launchOrFocus("Mail") end)
-hs.hotkey.bind({ "ctrl" }, "6", function() hs.application.launchOrFocus("Ghostty") end)
-hs.hotkey.bind({ "ctrl" }, "7", function() hs.application.launchOrFocus("Visual Studio Code") end)
+hs.hotkey.bind({ "ctrl" }, "1", function()
+	hs.application.launchOrFocus("Safari")
+end)
+hs.hotkey.bind({ "ctrl" }, "2", function()
+	hs.application.launchOrFocus("Finder")
+end)
+hs.hotkey.bind({ "ctrl" }, "3", function()
+	hs.application.launchOrFocus("Things3")
+end)
+hs.hotkey.bind({ "ctrl" }, "4", function()
+	hs.application.launchOrFocus("Mimestream")
+end)
+hs.hotkey.bind({ "ctrl" }, "5", function()
+	hs.application.launchOrFocus("Mail")
+end)
+hs.hotkey.bind({ "ctrl" }, "6", function()
+	hs.application.launchOrFocus("Ghostty")
+end)
+hs.hotkey.bind({ "ctrl" }, "7", function()
+	hs.application.launchOrFocus("Visual Studio Code")
+end)
