@@ -31,7 +31,7 @@ spoon.Hammerflow.loadFirstValidTomlFile({
 if spoon.Hammerflow.auto_reload then
 	hs.loadSpoon("ReloadConfiguration")
 	-- set any paths for auto reload
-	-- spoon.ReloadConfiguration.watch_paths = {hs.configDir, "~/path/to/my/configs/"}
+	spoon.ReloadConfiguration.watch_paths = { hs.configDir, "~/path/to/my/configs/" }
 	spoon.ReloadConfiguration:start()
 end
 
@@ -40,7 +40,7 @@ end
 -- each table contains functions that can be
 -- called from your toml config using the
 -- function: prefix, e.g.
---   h = "function:hi"
+-- h = "function:hi"
 spoon.Hammerflow.registerFunctions({
 	["hi"] = function()
 		hs.alert("hi")
@@ -52,10 +52,10 @@ spoon.Hammerflow.registerFunctions({
 		hs.alert("ho")
 	end,
 })
--- hs.alert.defaultStyle.atScreenEdge = 2
--- hs.alert.defaultStyle.textSize = 21
--- hs.alert.defaultStyle.padding = 21
--- hs.alert.defaultStyle.radius = 12
+hs.alert.defaultStyle.atScreenEdge = 2
+hs.alert.defaultStyle.textSize = 21
+hs.alert.defaultStyle.padding = 21
+hs.alert.defaultStyle.radius = 12
 
 -- local mb = hs.menubar.new()
 -- mb:setTitle("Donkey Cheeks")

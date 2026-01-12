@@ -5,12 +5,15 @@ return {
             require("mini.statusline").setup({ use_icons = true })
 
             require("mini.files").setup()
-            vim.keymap.set("n", "<C-\\>", ":lua MiniFiles.open()<CR>", { desc = "Open MiniFiles" })
+            local minifiles_toggle = function(...)
+                if not MiniFiles.close() then MiniFiles.open(...) end
+            end
+            vim.keymap.set("n", "<C-\\>", minifiles_toggle, { desc = "Open MiniFiles" })
 
-            local notify = require("mini.notify")
-            notify.setup({})
-            vim.notify = notify.make_notify()
-            vim.keymap.set("n", "<leader>nh", ":lua MiniNotify.show_history()<CR>", { desc = "[N]otification [H]istory" })
+            -- local notify = require("mini.notify")
+            -- notify.setup({})
+            -- vim.notify = notify.make_notify()
+            -- vim.keymap.set("n", "<leader>nh", ":lua MiniNotify.show_history()<CR>", { desc = "[N]otification [H]istory" })
 
             require("mini.move").setup()
 
@@ -49,17 +52,17 @@ return {
 
             -- require("mini.test").setup({})
 
-            require("mini.starter").setup({
-                header = function()
-                    local hour = tonumber(vim.fn.strftime("%H"))
-                    -- [04:00, 12:00) - morning, [12:00, 20:00) - day, [20:00, 04:00) - evening
-                    local part_id = math.floor((hour + 4) / 8) + 1
-                    local day_part = ({ "evening", "morning", "afternoon", "evening" })[part_id]
-                    local username = "Josh"
-
-                    return ("Good %s, %s"):format(day_part, username)
-                end,
-            })
+            -- require("mini.starter").setup({
+            --     header = function()
+            --         local hour = tonumber(vim.fn.strftime("%H"))
+            --         -- [04:00, 12:00) - morning, [12:00, 20:00) - day, [20:00, 04:00) - evening
+            --         local part_id = math.floor((hour + 4) / 8) + 1
+            --         local day_part = ({ "evening", "morning", "afternoon", "evening" })[part_id]
+            --         local username = "Josh"
+            --
+            --         return ("Good %s, %s"):format(day_part, username)
+            --     end,
+            -- })
         end,
     },
 }

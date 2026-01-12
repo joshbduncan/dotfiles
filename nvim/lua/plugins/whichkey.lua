@@ -10,6 +10,7 @@ return {
 				{ "<leader>c", group = "[C]ode" },
 				{ "<leader>d", group = "[D]ocument" },
 				{ "<leader>e", group = "[E]ecute" },
+				{ "<leader>f", group = "[F]ind" },
 				{ "<leader>r", group = "[R]ename" },
 				{ "<leader>s", group = "[S]earch" },
 				{ "<leader>t", group = "[T]oggle" },

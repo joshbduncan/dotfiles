@@ -11,19 +11,23 @@ return {
             apps = {
                 ["Adobe After Effects 2025"] = {
                     path = "/Applications/Adobe After Effects 2025/Adobe After Effects 2025.app",
-                    version = "25.1",
+                    version = "25.5.0"
                 },
-                ["Adobe Illustrator 2025"] = {
-                    path = "/Applications/Adobe Illustrator 2025/Adobe Illustrator.app",
-                    version = "29.1.0",
+                ["Adobe After Effects Render Engine 2025"] = {
+                    path = "/Applications/Adobe After Effects 2025/Adobe After Effects Render Engine 2025.app",
+                    version = "25.5.0"
                 },
-                ["Adobe InDesign 2025"] = {
-                    path = "/Applications/Adobe InDesign 2025/Adobe InDesign 2025.app",
-                    version = "20.0.1.32",
+                ["Adobe Illustrator 2026"] = {
+                    path = "/Applications/Adobe Illustrator 2026/Adobe Illustrator.app",
+                    version = "30.0.0"
                 },
-                ["Adobe Photoshop 2025"] = {
-                    path = "/Applications/Adobe Photoshop 2025/Adobe Photoshop 2025.app",
-                    version = "26.1.0",
+                ["Adobe InDesign 2026"] = {
+                    path = "/Applications/Adobe InDesign 2026/Adobe InDesign 2026.app",
+                    version = "21.0.0.192"
+                },
+                ["Adobe Photoshop 2026"] = {
+                    path = "/Applications/Adobe Photoshop 2026/Adobe Photoshop 2026.app",
+                    version = "27.0.0"
                 },
                 ["Dummy App"] = {
                     path = "/Applications/Adobe Photoshop 2025/Dummy.app",
