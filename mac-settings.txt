@@ -39,7 +39,10 @@ defaults write com.apple.finder DisableAllAnimations -bool true
 # Four-letter codes for the other view modes: `icnv`, `Nlasv`, `Flwv`
 defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 
-# Dont show icons for hard drives, servers, and removable media on the desktop
+# Resize column widths to longest file name.
+defaults write com.apple.finder _FXEnableColumnAutoSizing -bool YES; killall Finder
+
+# Don't show icons for hard drives, servers, and removable media on the desktop
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
