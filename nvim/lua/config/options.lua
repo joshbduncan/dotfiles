@@ -40,12 +40,3 @@ vim.opt.virtualedit = "block" -- Allow cursor to move where there is no text in 
 vim.opt.wildmode = "longest:full,full" -- Command-line completion mode
 vim.opt.winborder = "rounded"
 vim.opt.wrap = false
-
--- Add filetype detection for Jinja
-vim.filetype.add({
-	extension = {
-		jinja = "jinja",
-		jinja2 = "jinja",
-		j2 = "jinja",
-	},
-})

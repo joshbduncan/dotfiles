@@ -1,8 +1,7 @@
-local map = vim.keymap.set
-
 -- better indenting
-map("v", "<", "<gv")
-map("v", ">", ">gv")
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
 
--- clear highlights on search when pressing <Esc> in normal mode
-map("n", "<Esc>", "<cmd>nohlsearch<CR>")
+vim.keymap.set("n", "<leader>tu", function()
+	vim.cmd("Undotree")
+end, { desc = "Toggle Undotree" })
