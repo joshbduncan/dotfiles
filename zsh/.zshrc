@@ -28,6 +28,11 @@ source "${ZSH}/oh-my-zsh.sh"
 
 # User configuration
 
+# increase history size & removed old dupes
+HISTSIZE=200000
+SAVEHIST=200000
+setopt HIST_IGNORE_ALL_DUPS
+
 # add 1password cli completion
 # https://developer.1password.com/docs/cli/get-started/?utm_medium=organic&utm_source=oph&utm_campaign=macos
 eval "$(op completion zsh)"; compdef _op op

@@ -124,8 +124,8 @@ hs.hotkey.bind({ "cmd", "alt", "ctrl" }, "m", function()
 	c:show()
 end)
 
--- hammerspoon://openLocalPath?path=/Users/jbd/Dropbox/clients/McLaurin%20Farms/2025-07-07%20McLaurin%20Pumpkin%20Patch%20Banners%202025
-hs.urlevent.bind("openLocalPath", function(eventName, params)
+-- hammerspoon://openlocalpath?path=/Users/jbd/Dropbox/clients/McLaurin%20Farms/2025-07-07%20McLaurin%20Pumpkin%20Patch%20Banners%202025
+hs.urlevent.bind("openlocalpath", function(eventName, params)
 	print("Received urlevent:", eventName)
 
 	-- for key, value in pairs(params) do
@@ -143,7 +143,53 @@ hs.urlevent.bind("openLocalPath", function(eventName, params)
 	hs.application.launchOrFocus("Finder")
 end)
 
-hs.urlevent.bind("myEvent", function(eventName, params)
+hs.urlevent.bind("myevent", function(eventName, params)
+	print("Received event:", eventName)
+	for key, value in pairs(params) do
+		print(key, value)
+	end
+end)
+
+-- hammerspoon://things-x-success
+-- hammerspoon://things-x-error
+-- hammerspoon://things-x-cancel
+
+hs.urlevent.bind("things", function(eventName, params)
+	print("Received event:", eventName)
+	local project_folder = params["project-folder"]
+	local things_ids_json = params["x-things-ids"]
+
+	-- Parse the JSON array to get the first ID
+	local things_ids = hs.json.decode(things_ids_json)
+	local first_id = things_ids[1]
+
+	print("Project folder:", project_folder)
+	print("First Things ID:", first_id)
+
+	-- Call your CLI command
+	-- /Users/jbd/.local/bin/uv run --project /Users/jbd/Dropbox/Dev/dnkd dnkd clients --alfred
+	local command = string.format(
+		'echo "%s" "%s"',
+		project_folder,
+		first_id
+	)
+
+	hs.execute(command)
+
+	-- Or if you need the output:
+	local output, status, type, rc = hs.execute(command)
+	print("Command output:", output)
+	print("Exit code:", rc)
+end)
+
+hs.urlevent.bind("things-x-error", function(eventName, params)
+	print("Received event:", eventName)
+	for key, value in pairs(params) do
+		print(key, value)
+	end
+end)
+
+hs.urlevent.bind("things-x-cancel", function(eventName, params)
 	print("Received event:", eventName)
 	for key, value in pairs(params) do
 		print(key, value)
@@ -153,24 +199,24 @@ end)
 -- Launch/focus specific apps with one keystroke.
 -- Note: to get {^1,^2,^3} to work, you might need to change some conflicting
 -- Mission Control keyboard shortcuts in SysPrefs > Keyboard > Shortcuts
-hs.hotkey.bind({ "ctrl" }, "1", function()
+hs.hotkey.bind({ "cmd", "alt", "ctrl", "shift" }, "b", function()
 	hs.application.launchOrFocus("Safari")
 end)
-hs.hotkey.bind({ "ctrl" }, "2", function()
+hs.hotkey.bind({ "cmd", "alt", "ctrl", "shift" }, "f", function()
 	hs.application.launchOrFocus("Finder")
 end)
-hs.hotkey.bind({ "ctrl" }, "3", function()
+hs.hotkey.bind({ "cmd", "alt", "ctrl", "shift" }, "p", function()
 	hs.application.launchOrFocus("Things3")
 end)
-hs.hotkey.bind({ "ctrl" }, "4", function()
+hs.hotkey.bind({ "cmd", "alt", "ctrl", "shift" }, "m", function()
 	hs.application.launchOrFocus("Mimestream")
 end)
-hs.hotkey.bind({ "ctrl" }, "5", function()
+hs.hotkey.bind({ "cmd", "alt", "ctrl", "shift" }, "5", function()
 	hs.application.launchOrFocus("Mail")
 end)
-hs.hotkey.bind({ "ctrl" }, "6", function()
+hs.hotkey.bind({ "cmd", "alt", "ctrl", "shift" }, "t", function()
 	hs.application.launchOrFocus("Ghostty")
 end)
-hs.hotkey.bind({ "ctrl" }, "7", function()
+hs.hotkey.bind({ "cmd", "alt", "ctrl", "shift" }, "i", function()
 	hs.application.launchOrFocus("Visual Studio Code")
 end)

@@ -3,31 +3,40 @@
 
 theme = Dracula
 
-# font-family = JetBrainsMono NFM Bold
-font-family = TX-02-Trial Regular
+font-family = "JetBrainsMono Nerd Font Mono"
 font-size = 18
 font-feature = "-calt, -liga, -dlig"
 
 confirm-close-surface = true
 cursor-style = block
-# link = true
+
 link-url = true
+
+macos-shortcuts = "ask"
+
 mouse-hide-while-typing = true
 mouse-scroll-multiplier = .5
+
+shell-integration = zsh
 shell-integration-features = no-cursor
+
+auto-update-channel = "tip"
+
 window-save-state = always
 
 window-padding-color = extend
 window-padding-x = 10
 window-padding-y = 4
 
-# keybinds
-keybind = super+shift+l=goto_split:right
-keybind = super+shift+h=goto_split:left
-keybind = super+shift+k=goto_split:top
-keybind = super+shift+j=goto_split:bottom
+unfocused-split-opacity = .50
 
-# keybind = super+shift+h=previous_tab
-# keybind = super+shift+l=next_tab
+# keybinds
+keybind = super+alt+l=goto_split:right
+keybind = super+alt+h=goto_split:left
+keybind = super+alt+k=goto_split:top
+keybind = super+alt+j=goto_split:bottom
+
+keybind = super+shift+h=previous_tab
+keybind = super+shift+l=next_tab
 
 keybind = global:cmd+shift+'=toggle_quick_terminal
